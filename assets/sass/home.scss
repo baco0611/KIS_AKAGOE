@@ -41,8 +41,12 @@
         & a {
             color: $text-high-color;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 700;
+            opacity: 0.9;
+        }
+        &:hover {
+            opacity: 0.6;
         }
     }
 

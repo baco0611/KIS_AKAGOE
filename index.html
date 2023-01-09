@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./assets/img/logo/AKAGOE.png">
         <link rel="stylesheet" href="./assets/sass/css/style.css">
         <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="./assets/sass/css/animate.css">
@@ -12,6 +13,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script> 
         <title>赤声 - AKAGOE</title>
     </head>
     <body>
@@ -117,6 +120,27 @@
                 </div>
             </div>
             <div class="page-back"></div>
+        </div>
+
+        <!--Character session-->
+        <div id="character-session" class="character">
+            <!-- <div class="character-back"></div> -->
+            <div class="page-back page-front"></div>
+            <div class="containt wraper">
+                <div class="character-content">
+                    <div class="heading">
+                        <h3>INTRODUCE</h3>
+                        <h1 class="heading">CHARACTER</h1>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur. Sagittis facilisis amet enim accumsan donec id urna nisi in. Commodo enim suspendisse sit arcu. Odio in massa tellus mollis eget felis cursus sit elit. Metus leo in id vel. Metus sit purus neque amet rhoncus accumsan sed. Varius sed gravida consequat dignissim. Morbi ante morbi odio pellentesque. Et sagittis netus in sagittis lacus ac aliquam molestie aliquet.
+                    </p>
+                </div>
+                <div class="character-img">
+                    <model-viewer src="./assets/img/character/puppet_kid.gltf" camera-controls auto-rotate ar></model-viewer>
+                    <p>Dùng chuột kéo thả để xem và con lăn để zoom</p>
+                </div>
+            </div>
         </div>
         <script src="./assets/js/home.js"></script>
         <script src="./assets/js/explore.js"></script>

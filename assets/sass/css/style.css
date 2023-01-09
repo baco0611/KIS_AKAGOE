@@ -115,8 +115,12 @@ body {
 .drop-menu li a {
   color: #294a62;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
+  opacity: 0.9;
+}
+.drop-menu li:hover {
+  opacity: 0.6;
 }
 
 .btn-drop:hover .drop-menu {
@@ -374,6 +378,60 @@ body {
 #img-3:checked ~ .image-area label[for=img-1] {
   transform: translate3d(200px, 0, -180px) rotateY(-25deg);
   z-index: 2;
+}
+
+.character {
+  background: #E08181;
+}
+.character .containt {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.character-content {
+  width: 55%;
+}
+.character-content h3, .character-content h1 {
+  text-align: center;
+  padding: 10px;
+}
+.character-content p {
+  padding-top: 90px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: justify;
+  color: #FFFFFF;
+}
+
+.character-img {
+  width: 45%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.character-img model-viewer {
+  width: 100%;
+  padding-top: 100px;
+  height: 600px;
+}
+.character-img p {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: justify;
+  padding-top: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
