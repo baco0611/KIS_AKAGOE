@@ -1,0 +1,37 @@
+.wraper{
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+body{
+    line-height: 1;
+    color: white;
+    font-family: $font;
+    min-width: 740px;
+}
+
+.none {
+    display: none;
+}
+
+.page-back {
+    background: url(../../img/back_blur/back_blur.png) no-repeat;
+    background-size: cover;
+    height: 100px;
+}
+
+.heading h1 {
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 72px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.line {
+    width: min(100%, 740px);
+    height: 2.5px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    margin: 50px 0,
+}

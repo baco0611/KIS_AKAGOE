@@ -1,0 +1,16 @@
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin height-half($width:100%)
+{
+    width: $width;
+    height: $width/2;
+}
+
+@mixin height-69($width:100%)
+{
+    width: $width;
+    height: $width*2/3;
+}

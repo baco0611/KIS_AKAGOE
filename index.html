@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/sass/css/style.css">
+        <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+        <link rel="stylesheet" href="./assets/sass/css/animate.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <title>赤声 - AKAGOE</title>
+    </head>
+    <body>
+        <!--Home session-->
+        <div id="home-session" class="home">
+            <div class="contain wraper">
+                <div class="header">
+                    <div class="language">
+                        <button class="btn-drop">
+                            ENG
+                            <i class="ti-angle-down"></i>
+                        </button>
+                        <ul class="drop-menu none">
+                            <li data="ENG"><a href="#">ENG</a></li>
+                            <li data="VIE"><a href="#">VIE</a></li>
+                            <li data="JPN"><a href="#">JPN</a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar">
+                        <ul>
+                            <li><a href="#">MAIN</a></li>
+                            <li><a href="#">INTRODUCE</a></li>
+                            <li><a href="#">EXPLORE</a></li>
+                            <li><a href="#">CHARACTER</a></li>
+                            <li><a href="#">REVIEW</a></li>
+                            <li><a href="#">OTHER</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="home-main">
+                    <h1>赤声</h1>
+                    <h2>Children's Voice</h2>
+                    <button class="download"><a href="#">Download now</a></button>
+                </div>
+                <div class="home-down-btn">
+                    <a href="#introduce-session">THE STORY</a>
+                    <a href="#introduce-session"><i class="ti-arrow-circle-down"></i></a>
+                </div>
+            </div>
+            <div class="page-back home-back"></div>
+            <!-- <div class="page-back home-back right"></div> -->
+        </div>
+
+        <!--Introduce session-->
+        <div id="introduce-session" class="introduce">
+            <div class="page-back page-front"></div>
+            <!-- <div class="page-back introduce-front right"></div> -->
+            <div class="containt wraper">
+                <div class="heading">
+                    <h3>What is <span>赤声</span>?</h3>
+                    <h1>CHILDREN'S VOICE</h1>
+                </div>
+                <div class="line"></div>
+                <ul class="content">
+                    <li>赤声 là một trò chơi hướng tới giáo dục dành cho trẻ em từ 6 tuổi trở lên.</li>
+                    <li>Tên kết hợp giữa 赤ちゃん (trẻ em) và 声 (âm thanh) thể hiện tiếng nói của trẻ em.</li>
+                    <li>Hình thức: Phiêu lưu và giải đố.</li>
+                    <li>Trò chơi sẽ là một hành trình giúp các em có thể học tập các kỹ năng mềm như phân loại rác, tự đi siêu thị, sắp xếp đồ đạc, …</li>                 
+                    <li>Các thử thách sẽ được lặp lại theo ngày ở các địa điểm khác nhau như cuộc sống thường ngày của các em nhỏ để các em học tập được các kỹ năng đó.</li>
+                </ul>
+            </div>
+            <div class="page-back"></div>
+            <!-- <div class="page-back introduce-back right"></div> -->
+        </div>
+
+        <!--Explore session-->
+        <div id="explore-session" class="explore">
+            <div class="page-back page-front"></div>
+            <div class="containt wraper">
+                <div class="content">
+                    <div class="heading">
+                        <h1>EXPLORE</h1>
+                    </div>
+                    <div class="line"></div>
+                    <div class="content-main">
+                        <p id="for-img-1">1 The perspective property is used to give a 3D-positioned element some perspective.</p>
+                        <p id="for-img-2" class="none">2 When defining the perspective property for an element, it is the CHILD elements that get the perspective view, NOT the element itself.</p>
+                        <p id="for-img-3" class="none">3 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, in omnis adipisci beatae asperiores, qui, placeat hic aliquam ratione sapiente nostrum. Accusantium rem impedit atque mollitia distinctio ducimus in laboriosam!</p>
+                    </div>
+                </div>
+                <div class="img-slide">
+                    <input type="radio" name="testimonial" id="img-1" checked>
+                    <input type="radio" name="testimonial" id="img-2">
+                    <input type="radio" name="testimonial" id="img-3">
+
+                    <div class="image-area">
+                        <label for="img-1" class="item">
+                            <div id="img-1-show"></div>
+                        </label>
+                        <label for="img-2" class="item">
+                            <div id="img-2-show"></div>
+                        </label>
+                        <label for="img-3" class="item">
+                            <div id="img-3-show"></div>
+                        </label>
+                    </div>
+
+                    <div class="dots">
+                        <label for="img-1"></label>
+                        <label for="img-2"></label>
+                        <label for="img-3"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="page-back"></div>
+        </div>
+        <script src="./assets/js/home.js"></script>
+        <script src="./assets/js/explore.js"></script>
+    </body>
+</html>

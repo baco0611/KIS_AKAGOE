@@ -1,0 +1,46 @@
+#introduce-session {
+    background: url('../../img/introduce/background-blur.png'),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.35) 0%,rgba(255, 255, 255, 0.35) 100%), 
+                url('../../img/introduce/introduce-back.png') no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 600px;
+    position: relative;
+}
+
+.page-front {
+    transform: rotate(180deg);
+}
+
+.introduce {
+    & .containt{
+        padding:  200px 0 150px 0;
+    }
+    & .heading{
+        & h3{
+            font-weight: 400;
+            font-size: 30px;
+            letter-spacing: 5px;
+        }
+        & span {
+            font-family: $jp-font;
+            font-weight: 700;
+        }
+        & h1 {
+            padding-top: 10px;
+            padding-bottom: 50px;
+        }
+    }
+    & ul {
+        padding-left: 40px;
+        padding-top: 40px;
+    }
+    & li {
+        width: 700px;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 40px;
+        text-align: justify;
+        font-family: $sub-font;
+    }
+}
