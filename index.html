@@ -5,9 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="./assets/img/logo/AKAGOE.png">
-        <link rel="stylesheet" href="./assets/sass/css/style.css">
         <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
         <link rel="stylesheet" href="./assets/sass/css/animate.css">
+        <link rel="stylesheet" href="./assets/sass/css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -124,13 +125,12 @@
 
         <!--Character session-->
         <div id="character-session" class="character">
-            <!-- <div class="character-back"></div> -->
             <div class="page-back page-front"></div>
             <div class="containt wraper">
                 <div class="character-content">
                     <div class="heading">
                         <h3>INTRODUCE</h3>
-                        <h1 class="heading">CHARACTER</h1>
+                        <h1>CHARACTER</h1>
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur. Sagittis facilisis amet enim accumsan donec id urna nisi in. Commodo enim suspendisse sit arcu. Odio in massa tellus mollis eget felis cursus sit elit. Metus leo in id vel. Metus sit purus neque amet rhoncus accumsan sed. Varius sed gravida consequat dignissim. Morbi ante morbi odio pellentesque. Et sagittis netus in sagittis lacus ac aliquam molestie aliquet.
@@ -142,7 +142,422 @@
                 </div>
             </div>
         </div>
+        
+        <!--Review session-->
+        <div id="review-session" class="review">
+            <div class="review-header wraper">
+                <div class="header-blank"></div>
+                <div class="header-content">
+                    <div class="heading">
+                        <h3>What customers say about us</h3>
+                        <h1>REVIEWS</h1>
+                    </div>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="review-content wraper">
+                <div class="review-btn">
+                    <div class="sort-btn">
+                        <p>Sort by:</p>
+                        <select id="review-sort" name="sort">
+                            <option value="">Select</option>
+                            <option value="name">Tên tài khoản tăng</option>
+                            <option value="name">Tên tài khoản giảm</option>
+                            <option value="date">Ngày đăng tăng</option>
+                            <option value="date">Ngày đăng giảm</option>
+                        </select>
+                    </div>
+                    <div class="cmt-btn">
+                        <button>
+                            <i class="ti-plus"></i>
+                            <p>Leave a comment</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="review-main">
+                    <div class="swiper mySwiper">
+                        <div class="main swiper-wrapper">
+                            <div class="main-box review-box swiper-slide">
+                                <h4>Excellent</h4>
+                                <div class="main-box-star">
+                                    <div class="box-star">
+                                        <div class="main-back">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="box-star">
+                                        <div class="main-back">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="box-star">
+                                        <div class="main-back">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="box-star">
+                                        <div class="main-back">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="box-star">
+                                        <div class="main-back">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>
+                                </div>    
+
+                                <h3>Based on <span class="number bold">456</span> <span class="bold">reviews</span></h3>
+                                
+                                <div class="line"></div>
+
+                                <h5>akagoe reviews database</h5>
+                            </div>
+                            <div class="review-box swiper-slide">
+                                <div class="review-box-header">
+                                    <div class="review-box-star">
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>   
+                                    
+                                    <p class="review-box-date">2 days ago</p>
+                                </div>
+
+                                <div class="review-box-content">
+                                    <h2 class="review-name">Alexa Andrew</h2>
+                                    <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ullam, error ipsam, amet consectetur adipisicing elit ...</p>
+                                    <div class="line"></div>
+                                    <button class="review-readmore">Read more</button>
+                                </div>
+                            </div>
+                            <div class="review-box swiper-slide">
+                                <div class="review-box-header">
+                                    <div class="review-box-star">
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>   
+                                    
+                                    <p class="review-box-date">2 days ago</p>
+                                </div>
+
+                                <div class="review-box-content">
+                                    <h2 class="review-name">Alexa Andrew</h2>
+                                    <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ullam, error ipsam, amet consectetur adipisicing elit ...</p>
+                                    <div class="line"></div>
+                                    <button class="review-readmore">Read more</button>
+                                </div>
+                            </div>
+                            <div class="review-box swiper-slide">
+                                <div class="review-box-header">
+                                    <div class="review-box-star">
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>   
+                                    
+                                    <p class="review-box-date">2 days ago</p>
+                                </div>
+
+                                <div class="review-box-content">
+                                    <h2 class="review-name">Alexa Andrew</h2>
+                                    <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ullam, error ipsam, amet consectetur adipisicing elit ...</p>
+                                    <div class="line"></div>
+                                    <button class="review-readmore">Read more</button>
+                                </div>
+                            </div>
+                            <div class="review-box swiper-slide">
+                                <div class="review-box-header">
+                                    <div class="review-box-star">
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>   
+                                    
+                                    <p class="review-box-date">2 days ago</p>
+                                </div>
+
+                                <div class="review-box-content">
+                                    <h2 class="review-name">Alexa Andrew</h2>
+                                    <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ullam, error ipsam, amet consectetur adipisicing elit ...</p>
+                                    <div class="line"></div>
+                                    <button class="review-readmore">Read more</button>
+                                </div>
+                            </div>
+                            <div class="review-box swiper-slide">
+                                <div class="review-box-header">
+                                    <div class="review-box-star">
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>   
+                                    
+                                    <p class="review-box-date">2 days ago</p>
+                                </div>
+
+                                <div class="review-box-content">
+                                    <h2 class="review-name">Alexa Andrew</h2>
+                                    <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ullam, error ipsam, amet consectetur adipisicing elit ...</p>
+                                    <div class="line"></div>
+                                    <button class="review-readmore">Read more</button>
+                                </div>
+                            </div>
+                            <div class="review-box swiper-slide">
+                                <div class="review-box-header">
+                                    <div class="review-box-star">
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>   
+                                    
+                                    <p class="review-box-date">2 days ago</p>
+                                </div>
+
+                                <div class="review-box-content">
+                                    <h2 class="review-name">Alexa Andrew</h2>
+                                    <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ullam, error ipsam, amet consectetur adipisicing elit ...</p>
+                                    <div class="line"></div>
+                                    <button class="review-readmore">Read more</button>
+                                </div>
+                            </div>
+                            <div class="review-box swiper-slide">
+                                <div class="review-box-header">
+                                    <div class="review-box-star">
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>   
+                                    
+                                    <p class="review-box-date">2 days ago</p>
+                                </div>
+
+                                <div class="review-box-content">
+                                    <h2 class="review-name">Alexa Andrew</h2>
+                                    <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ullam, error ipsam, amet consectetur adipisicing elit ...</p>
+                                    <div class="line"></div>
+                                    <button class="review-readmore">Read more</button>
+                                </div>
+                            </div>
+                            <div class="review-box swiper-slide">
+                                <div class="review-box-header">
+                                    <div class="review-box-star">
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>   
+                                    
+                                    <p class="review-box-date">2 days ago</p>
+                                </div>
+
+                                <div class="review-box-content">
+                                    <h2 class="review-name">Alexa Andrew</h2>
+                                    <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ullam, error ipsam, amet consectetur adipisicing elit ...</p>
+                                    <div class="line"></div>
+                                    <button class="review-readmore">Read more</button>
+                                </div>
+                            </div>
+                            <div class="review-box swiper-slide">
+                                <div class="review-box-header">
+                                    <div class="review-box-star">
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>   
+                                    
+                                    <p class="review-box-date">2 days ago</p>
+                                </div>
+
+                                <div class="review-box-content">
+                                    <h2 class="review-name">Alexa Andrew</h2>
+                                    <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ullam, error ipsam, amet consectetur adipisicing elit ...</p>
+                                    <div class="line"></div>
+                                    <button class="review-readmore">Read more</button>
+                                </div>
+                            </div>
+                            <div class="review-box swiper-slide">
+                                <div class="review-box-header">
+                                    <div class="review-box-star">
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>   
+                                    
+                                    <p class="review-box-date">2 days ago</p>
+                                </div>
+
+                                <div class="review-box-content">
+                                    <h2 class="review-name">Alexa Andrew</h2>
+                                    <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ullam, error ipsam, amet consectetur adipisicing elit ...</p>
+                                    <div class="line"></div>
+                                    <button class="review-readmore">Read more</button>
+                                </div>
+                            </div>
+                            <div class="review-box swiper-slide">
+                                <div class="review-box-header">
+                                    <div class="review-box-star">
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                        <div class="box-star">
+                                            <i class="ti-star"></i>
+                                        </div>
+                                    </div>   
+                                    
+                                    <p class="review-box-date">2 days ago</p>
+                                </div>
+
+                                <div class="review-box-content">
+                                    <h2 class="review-name">Alexa Andrew</h2>
+                                    <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ullam, error ipsam, amet consectetur adipisicing elit ...</p>
+                                    <div class="line"></div>
+                                    <button class="review-readmore">Read more</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next next-btn"></div>
+                    <div class="swiper-button-prev back-btn"></div>
+                    <div class="pagination swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+       
         <script src="./assets/js/home.js"></script>
-        <script src="./assets/js/explore.js"></script>
+        <!-- <script src="./assets/js/explore.js"></script> -->
+        <!-- <script src="./assets/js/three.js"></script> -->
+        <script type="module" src="./assets/js/character.js"></script>
+        <script src="./assets/js/swiper-bundle.min.js"></script>
+        <script src="./assets/js/review.js"></script>
     </body>
 </html>
