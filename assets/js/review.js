@@ -1,23 +1,5 @@
-// const $ = document.querySelector.bind(document);
-// const $$ = document.querySelectorAll.bind(document);
-
-// const reviewBoxesOfficial = $$('.review-main .review-box')
-// var reviewBoxes = reviewBoxesOfficial
-// console.log(reviewBoxes)
-
-// const backBtn = $('.review-main .back-btn')
-// const nextBtn = $('.review-main .next-btn')
-
-// console.log(backBtn)
-// console.log(nextBtn)
-
-// var main = $('.review-main .main').innerHTML
-// console.log(String(main))
-// main = main.split('</div>')
-// console.log(main)
-
-// const mainElement = $('.review-main .main')
-// var childElement = document.createElement('div')
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,
@@ -34,3 +16,31 @@ var swiper = new Swiper(".mySwiper", {
       prevEl: ".swiper-button-prev",
     },
 });
+
+var readmoreBtns = $$('.review-main .review-readmore')
+console.log(readmoreBtns)
+
+readmoreBtns.forEach(readmoreBtn => {
+    readmoreBtn.onclick = () => {
+        const id = '#rv-' + readmoreBtn.id
+        const openReadmore = $(id)
+
+        openReadmore.classList.add('open')
+    }
+});
+
+const readmoreDivs = $$('.review-readmore-hidden')
+
+readmoreDivs.forEach(readmoreDiv => {
+    readmoreDiv.onclick = () => {
+        readmoreDiv.classList.remove('open')
+    }
+})
+
+const reviewContainers = $$('.review-container');
+for(const reviewContainer of reviewContainers)
+{
+    reviewContainer.addEventListener('click', function(e){
+        e.stopPropagation();
+    });
+}

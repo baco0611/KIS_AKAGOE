@@ -748,4 +748,36 @@ body {
   font-size: 10px;
 }
 
+.review-readmore-hidden {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  z-index: 10;
+}
+
+.review-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 480px;
+  min-height: 200px;
+  margin: 20vh auto;
+  background-color: white;
+  padding: 25px;
+  border-radius: 30px;
+  animation: modalFadeIn ease 0.5s;
+}
+.review-container .review-box-header {
+  margin: 0;
+}
+
+.open {
+  display: block;
+}
+
 /*# sourceMappingURL=style.css.map */
