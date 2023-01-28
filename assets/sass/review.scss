@@ -364,18 +364,19 @@
     background-color: rgba(12, 64, 83, 0.623);
     align-items: center;
     z-index: 10;
+    animation: fadeIn 0.5s linear;
 }
 
 .comment-container {
+    position: relative;
     margin: 10vh auto;
     width: 800px;
-    height: 500px;
+    min-height: 500px;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     & h1 {
         font-weight: 900;
         font-size: 36px;
@@ -417,11 +418,10 @@
     text-shadow: 0 0 20px rgba(255, 0, 0, 0.799);
 }
 
-form {
+.comment-box form {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     & header {
         height: 20px;
         width: 100%;
@@ -432,12 +432,27 @@ form {
         letter-spacing: 1.5px;
         color: $text-high-color;
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         transition: all 0.2s ease;
     }
 
+    & input {
+        width: 500px;
+        height: 35px;
+        margin-bottom: 20px;
+        padding: 13px;
+        font-size: 18px;
+        color: $text-high-color;
+        letter-spacing: 2px;
+        font-family: $font;
+        border-radius: 10px;
+        border: solid 1px $text-high-color;
+        animation: fadeIn 0.25s linear;
+        display: none;
+    }
+
     & .comment-text-area {
-        height: 180px;
+        height: 100px;
         width: 500px;
     }
 
@@ -453,11 +468,12 @@ form {
         letter-spacing: 2px;
         font-family: $font;
         resize: none;
+        animation: fadeIn 0.25s linear;
         display: none;
     }
-    & button{
+    & .submit-button{
         width: 100px;
-        height: 40px;
+        height: 35px;
         background-color: $text-high-color;
         border-color: transparent;
         color: white;
@@ -465,10 +481,14 @@ form {
         border-radius: 5px;
         margin-top: 20px;
         opacity: 1;
+        line-height: 35px;
+        text-align: center;
         &:hover{
             opacity: 0.9;
+            cursor: pointer;
         }
         display: none;
+        animation: fadeIn 0.25s linear;
     }
 
     & h1 {
@@ -477,7 +497,25 @@ form {
     }
 }
 
+.comment-box i {
+    color: #294a62c2;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-weight: 800;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:hover {
+        color: $text-high-color;
+    }
+}
+
 
 .open {
     display: block;
+}
+
+.out {
+    animation: fadeOut 0.5s linear;
 }

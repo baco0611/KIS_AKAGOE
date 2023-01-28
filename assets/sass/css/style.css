@@ -786,12 +786,14 @@ body {
   background-color: rgba(12, 64, 83, 0.623);
   align-items: center;
   z-index: 10;
+  animation: fadeIn 0.5s linear;
 }
 
 .comment-container {
+  position: relative;
   margin: 10vh auto;
   width: 800px;
-  height: 500px;
+  min-height: 500px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -836,12 +838,12 @@ body {
   text-shadow: 0 0 20px rgba(255, 0, 0, 0.799);
 }
 
-form {
+.comment-box form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-form header {
+.comment-box form header {
   height: 20px;
   width: 100%;
   line-height: 20px;
@@ -851,14 +853,28 @@ form header {
   letter-spacing: 1.5px;
   color: #294a62;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   transition: all 0.2s ease;
 }
-form .comment-text-area {
-  height: 180px;
+.comment-box form input {
+  width: 500px;
+  height: 35px;
+  margin-bottom: 20px;
+  padding: 13px;
+  font-size: 18px;
+  color: #294a62;
+  letter-spacing: 2px;
+  font-family: "Lato", sans-serif;
+  border-radius: 10px;
+  border: solid 1px #294a62;
+  animation: fadeIn 0.25s linear;
+  display: none;
+}
+.comment-box form .comment-text-area {
+  height: 100px;
   width: 500px;
 }
-form textarea {
+.comment-box form textarea {
   width: 100%;
   height: 100%;
   outline: none;
@@ -870,11 +886,12 @@ form textarea {
   letter-spacing: 2px;
   font-family: "Lato", sans-serif;
   resize: none;
+  animation: fadeIn 0.25s linear;
   display: none;
 }
-form button {
+.comment-box form .submit-button {
   width: 100px;
-  height: 40px;
+  height: 35px;
   background-color: #294a62;
   border-color: transparent;
   color: white;
@@ -882,18 +899,39 @@ form button {
   border-radius: 5px;
   margin-top: 20px;
   opacity: 1;
+  line-height: 35px;
+  text-align: center;
   display: none;
+  animation: fadeIn 0.25s linear;
 }
-form button:hover {
+.comment-box form .submit-button:hover {
   opacity: 0.9;
+  cursor: pointer;
 }
-form h1 {
+.comment-box form h1 {
   height: 100%;
   opacity: 0.2;
 }
 
+.comment-box i {
+  color: rgba(41, 74, 98, 0.7607843137);
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-weight: 800;
+  font-size: 20px;
+  cursor: pointer;
+}
+.comment-box i:hover {
+  color: #294a62;
+}
+
 .open {
   display: block;
+}
+
+.out {
+  animation: fadeOut 0.5s linear;
 }
 
 /*# sourceMappingURL=style.css.map */

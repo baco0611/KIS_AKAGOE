@@ -31,7 +31,7 @@ readmoreBtns.forEach(readmoreBtn => {
     }
 })
 
-const readmoreDivs = $$('.review-readmore-hidden')
+var readmoreDivs = $$('.review-readmore-hidden')
 
 readmoreDivs.forEach(readmoreDiv => {
     readmoreDiv.onclick = () => {
@@ -49,9 +49,12 @@ for(const reviewContainer of reviewContainers)
 
 
 // Handle close comment
-function closeComment(cmtBox, cmtCon, cmtConOff){
-    cmtBox.classList.remove('open')
-    cmtCon.innerHTML = cmtConOff
+function closeComment(cmtBox){
+    cmtBox.classList.add('out')
+    setTimeout(() => {
+        cmtBox.classList.remove('open')
+        cmtBox.classList.remove('out')
+    }, 500)
 }
 
 // Handle text according to the rating
@@ -59,15 +62,16 @@ function restartStar()
 {
 
     const stars = $$('.comment-rating input')
-    console.log(stars)
+    // console.log(stars)
     
     stars.forEach(star => {
-        const header = $('form header')
-        const h1 = $('form h1')
-        const textArea = $('form textarea')
-        const button = $('form button')
+        const header = $('.comment-box form header')
+        const h1 = $('.comment-box form h1')
+        const textArea = $('.comment-box form textarea')
+        const button = $('.comment-box form .submit-button')
+        const inputArea = $$('.comment-box form input')
         star.onclick = () => {
-            console.log(star.id)
+            // console.log(star.id)
             if(star.checked)
             {
                 switch (star.id) {
@@ -90,9 +94,12 @@ function restartStar()
                     default:
                         break;
                 }
-                h1.classList.add('none')
-                textArea.classList.add('open')        
-                button.classList.add('open')        
+                inputArea.forEach(input => {
+                    input.style.display = "block"
+                })
+                textArea.style.display = "block"
+                button.style.display = "block"
+                h1.classList.add('none')       
             }
         }    
     })
@@ -103,6 +110,7 @@ const cmtBtn = $('.cmt-btn')
 const cmtBox = $('.comment-box')
 const cmtCon = $('.comment-container')
 const cmtConOff = cmtCon.innerHTML
+const closeBtn = $('.comment-container i')
 
 cmtBtn.onclick = () => {
     cmtBox.classList.add('open')
@@ -110,12 +118,14 @@ cmtBtn.onclick = () => {
 }
 
 cmtBox.onclick = () => {
-    closeComment(cmtBox, cmtCon, cmtConOff)
+    closeComment(cmtBox)
+}
+
+closeBtn.onclick = () => {
+    closeComment(cmtBox)
 }
 
 cmtCon.onclick = e => {
     e.stopPropagation()
 }
-
-
 
