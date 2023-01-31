@@ -1,15 +1,158 @@
-// Valid and return form element
-const textArea = $('#comment-content')
-const submitBtn = $('.comment-box .submit-button')
+// const $ = document.querySelector.bind(document);
+// const $$ = document.querySelectorAll.bind(document);
 
-submitBtn.onclick = (e) => {
-    e.stopPropagation()
+var x = $('.form-group')
 
-    const textArea = $('.comment-box form textarea')
-    const name = $('.comment-box form .name')
-    const email = $('.comment-box form .email')
+// Contructor function
+function Validator(option) {
 
-    console.log(textArea.value)
-    console.log(name.value)
-    console.log(email.value)
+    function getParent(element, selector) {
+        while(element.parentElement) {
+            if(element.parentElement.matches(selector))
+                return element.parentElement
+            
+            element = element.parentElement
+        }
+    }
+    
+    var selectorRules = {}
+
+    // The function that does the validation
+    function validate(inputElement, rule) {
+        //value: inputElement.value
+        //test: rule.test
+        // var errorElement = inputElement.parentElement.querySelector(option.errorSelector) 
+        var errorElement = getParent(inputElement, option.formGroupSelector).querySelector(option.errorSelector) 
+        var errorMessage;
+
+        // Get rules of selector
+        var rules = selectorRules[rule.selector]
+        
+        // Loop each rule and validate the value by rule
+        // In the case of error, break the loop
+        for (i = 0; i < rules.length; i++)
+        {
+            errorMessage = rules[i](inputElement.value)
+            if(errorMessage)
+                break
+        }
+
+        if(errorMessage) {
+            errorElement.innerText = errorMessage
+            getParent(inputElement, option.formGroupSelector).classList.add('invalid')
+        } else {
+            errorElement.innerText = ''
+            getParent(inputElement, option.formGroupSelector).classList.remove('invalid')
+        }
+        
+        return !errorMessage
+    }
+
+    // Get the element of the form to validate
+    var formElement = $(option.form)
+
+
+    if(formElement) {
+
+        // When the form be submitted
+        formElement.onsubmit = (e) => {
+            e.preventDefault()
+
+            var isFormValid = true
+            // Loop through each rule and validate in any case
+            option.rules.forEach(rule => {
+                var inputElement = formElement.querySelector(rule.selector)
+                if(inputElement) {
+                    var isValid = validate(inputElement, rule)
+
+                    if(!isValid)
+                        isFormValid = false
+                }
+            })
+
+            if(isFormValid)
+            {
+                if(typeof option.onSubmit === 'function')
+                {
+                    var enableInputs = formElement.querySelectorAll('[name]:not([disabled])')
+                    var formValues = Array.from(enableInputs).reduce((values, input) => {
+                        values[input.name] = input.value
+                        return values
+                    }, {})
+
+                    option.onSubmit(formValues)
+                }
+            }
+
+        }
+
+        // Loop through each rule and listen event for handling
+        option.rules.forEach(rule => {
+            var inputElement = formElement.querySelector(rule.selector)
+            
+            // Save the rule for each element
+            if(Array.isArray(selectorRules[rule.selector])){
+                selectorRules[rule.selector].push(rule.test)
+            } else {
+                selectorRules[rule.selector] = [rule.test]
+            }
+
+            if(inputElement) {
+                // Handling the case when blur out inputElement
+                inputElement.onblur = () => {
+                    validate(inputElement, rule)
+                }
+
+                // Handling the case when user fill the value in inputElement
+                inputElement.oninput = () => {
+                    var errorElement = getParent(inputElement, option.formGroupSelector).querySelector(option.errorSelector) 
+                    errorElement.innerText = ''
+                    getParent(inputElement, option.formGroupSelector).classList.remove('invalid')
+                }
+            }
+        })
+    }
+
+}
+
+// Define rules
+// Principals of rule
+// 1. Khi có lỗi thì trả về message lỗi
+// 2. Khi không có lỗi thì trả về undefines
+Validator.isRequired = (selector, message) => {
+    return {
+        selector,
+        test(value) {
+            return value.trim() ? undefined : message || 'Vui lòng nhập trường này'
+        }
+    }
+}
+
+Validator.isEmail = (selector, message) => {
+    return {
+        selector,
+        test(value) {
+            var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+            return regex.test(value) ? undefined : message || 'Trường này phải là email'
+        }
+    }
+}
+
+Validator.minLength = (selector, min, message) => {
+    return {
+        selector,
+        test(value) {
+            return value.length >= min ? undefined : message || `Vui lòng nhập mật khẩu ít nhất ${min} ký tự`
+        }
+    }
+}
+
+Validator.isConfirmed = (selector, getValue, message) => {
+    return {
+        selector,
+        test(value) {
+            var password = getValue()
+            return value === password ? undefined : message || 'Giá trị nhập vào không chính xác' 
+        }
+    }
 }

@@ -67,9 +67,8 @@ function restartStar()
     stars.forEach(star => {
         const header = $('.comment-box form header')
         const h1 = $('.comment-box form h1')
-        const textArea = $('.comment-box form textarea')
         const button = $('.comment-box form .submit-button')
-        const inputArea = $$('.comment-box form input')
+        const inputArea = $('.comment-box form .comment-input')
         star.onclick = () => {
             // console.log(star.id)
             if(star.checked)
@@ -94,10 +93,7 @@ function restartStar()
                     default:
                         break;
                 }
-                inputArea.forEach(input => {
-                    input.style.display = "block"
-                })
-                textArea.style.display = "block"
+                inputArea.style.display = "block"
                 button.style.display = "block"
                 h1.classList.add('none')       
             }

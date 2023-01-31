@@ -113,7 +113,7 @@
         box-sizing: content-box;
         & .review-box {
             flex-shrink: 0;
-            width: 250px;
+            min-width: 250px;
             height: 100%;
             background-color: white;
             border-bottom-right-radius: 15px;
@@ -370,9 +370,11 @@
 .comment-container {
     position: relative;
     margin: 10vh auto;
-    width: 800px;
+    padding: 20px 0;
+    width: 650px;
     min-height: 500px;
     background-color: white;
+    border-radius: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -436,19 +438,61 @@
         transition: all 0.2s ease;
     }
 
+    & .comment-input {
+        display: none;
+    }
+
+    & .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3px;
+    }
+
+    & label {
+        color: $text-high-color;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16px;
+        padding-bottom: 2px;
+        padding-left: 2px;
+    }
+
     & input {
-        width: 500px;
-        height: 35px;
-        margin-bottom: 20px;
-        padding: 13px;
-        font-size: 18px;
+        width: 400px;
+        height: 20px;
+        padding: 12px;
+        font-size: 14px;
         color: $text-high-color;
         letter-spacing: 2px;
         font-family: $font;
         border-radius: 10px;
         border: solid 1px $text-high-color;
         animation: fadeIn 0.25s linear;
-        display: none;
+    }
+
+    & textarea {
+        width: 400px;
+        height: 100px;
+        padding: 12px;
+        font-size: 14px;
+        color: $text-high-color;
+        letter-spacing: 2px;
+        font-family: $font;
+        border-radius: 10px;
+        border: solid 1px $text-high-color;
+        animation: fadeIn 0.25s linear;
+        resize: none;
+        outline: none;
+    }
+
+    & span {
+        color: $text-high-color;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        padding-bottom: 5px;
+        padding-left: 2px;
+        height: 18px;
     }
 
     & .comment-text-area {
@@ -456,25 +500,11 @@
         width: 500px;
     }
 
-    & textarea {
-        width: 100%;
-        height: 100%;
-        outline: none;
-        border-radius: 10px;
-        border: solid 1px $text-high-color;
-        padding: 13px;
-        font-size: 18px;
-        color: $text-high-color;
-        letter-spacing: 2px;
-        font-family: $font;
-        resize: none;
-        animation: fadeIn 0.25s linear;
-        display: none;
-    }
     & .submit-button{
         width: 100px;
         height: 35px;
         background-color: $text-high-color;
+        font-family: $font;
         border-color: transparent;
         color: white;
         letter-spacing: 2px;
@@ -511,6 +541,21 @@
     }
 }
 
+.form-group.invalid {
+    & input {
+        color: $primary-color;
+        border: solid 1px $primary-color;
+    }
+
+    & textarea {
+        color: $primary-color;
+        border: solid 1px $primary-color;
+    }
+
+    & span {
+        color: $primary-color;
+    }
+}
 
 .open {
     display: block;

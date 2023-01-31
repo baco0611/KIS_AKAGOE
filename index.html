@@ -353,17 +353,32 @@
                             <input type="radio" name="rate" id="rate-1"><label class="ti-star" for="rate-1"></label>
                         </div>
 
-                        <form action="#">
+                        <form action="#" method="POST" class="form" id="comment-form">
                             <header></header>
                             <h1>PLEASE RATE FIRST ^^</h1>
-                            <input class="name" type="text" placeholder="Your name">
-                            <input class="email" type="text" placeholder="Your email">
-                            <div class="comment-text-area">
-                                <textarea name="comment" id="comment-content" placeholder="Write your message here ..."></textarea>
+                            <div class="comment-input">
+                                <div class="form-group">
+                                    <label for="comment-name">Name</label>
+                                    <input id="comment-name" name="name" class="name" type="text" placeholder="Your name">
+                                    <span class="form-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment-email">Email</label>
+                                    <input id="comment-email" name="email" class="email" type="text" placeholder="Your email">
+                                    <span class="form-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment-phone">Phone number</label>
+                                    <input id="comment-phone" name="phone" class="phonenumber" type="text" placeholder="Your phone number">
+                                    <span class="form-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment-text">Your comment</label>
+                                    <textarea name="content" id="comment-text" cols="30" placeholder="Text your comment"></textarea>
+                                    <span class="form-message"></span>
+                                </div>
                             </div>
-                            <div class="submit-button">
-                                <p>Submit</p>
-                            </div>
+                            <button class="submit-button">Submit</button>
                         </form>
 
                         <i class="ti-close"></i>
@@ -379,5 +394,23 @@
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/review.js"></script>
         <script src="./assets/js/validcomment.js"></script>
+        <script>
+            Validator({
+            form: '#comment-form',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#comment-name', 'Please fill your full name'),
+                Validator.isRequired('#comment-email', 'Please fill your email'),
+                Validator.isEmail('#comment-email', 'Please fill correct email'),
+                Validator.isRequired('#comment-phone'),
+                Validator.minLength('#comment-phone', 10),
+                Validator.isRequired('#comment-text'),
+            ],
+            onSubmit(data) {
+                console.log(data)
+            }
+        });
+        </script>
     </body>
 </html>

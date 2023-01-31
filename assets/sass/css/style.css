@@ -552,7 +552,7 @@ body {
 }
 .review-main .main .review-box {
   flex-shrink: 0;
-  width: 250px;
+  min-width: 250px;
   height: 100%;
   background-color: white;
   border-bottom-right-radius: 15px;
@@ -792,9 +792,11 @@ body {
 .comment-container {
   position: relative;
   margin: 10vh auto;
-  width: 800px;
+  padding: 20px 0;
+  width: 650px;
   min-height: 500px;
   background-color: white;
+  border-radius: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -856,43 +858,66 @@ body {
   margin-bottom: 20px;
   transition: all 0.2s ease;
 }
+.comment-box form .comment-input {
+  display: none;
+}
+.comment-box form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3px;
+}
+.comment-box form label {
+  color: #294a62;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+}
 .comment-box form input {
-  width: 500px;
-  height: 35px;
-  margin-bottom: 20px;
-  padding: 13px;
-  font-size: 18px;
+  width: 400px;
+  height: 20px;
+  padding: 12px;
+  font-size: 14px;
   color: #294a62;
   letter-spacing: 2px;
   font-family: "Lato", sans-serif;
   border-radius: 10px;
   border: solid 1px #294a62;
   animation: fadeIn 0.25s linear;
-  display: none;
+}
+.comment-box form textarea {
+  width: 400px;
+  height: 100px;
+  padding: 12px;
+  font-size: 14px;
+  color: #294a62;
+  letter-spacing: 2px;
+  font-family: "Lato", sans-serif;
+  border-radius: 10px;
+  border: solid 1px #294a62;
+  animation: fadeIn 0.25s linear;
+  resize: none;
+  outline: none;
+}
+.comment-box form span {
+  color: #294a62;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  padding-bottom: 5px;
+  padding-left: 2px;
+  height: 18px;
 }
 .comment-box form .comment-text-area {
   height: 100px;
   width: 500px;
 }
-.comment-box form textarea {
-  width: 100%;
-  height: 100%;
-  outline: none;
-  border-radius: 10px;
-  border: solid 1px #294a62;
-  padding: 13px;
-  font-size: 18px;
-  color: #294a62;
-  letter-spacing: 2px;
-  font-family: "Lato", sans-serif;
-  resize: none;
-  animation: fadeIn 0.25s linear;
-  display: none;
-}
 .comment-box form .submit-button {
   width: 100px;
   height: 35px;
   background-color: #294a62;
+  font-family: "Lato", sans-serif;
   border-color: transparent;
   color: white;
   letter-spacing: 2px;
@@ -924,6 +949,18 @@ body {
 }
 .comment-box i:hover {
   color: #294a62;
+}
+
+.form-group.invalid input {
+  color: #E08181;
+  border: solid 1px #E08181;
+}
+.form-group.invalid textarea {
+  color: #E08181;
+  border: solid 1px #E08181;
+}
+.form-group.invalid span {
+  color: #E08181;
 }
 
 .open {
