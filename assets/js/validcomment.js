@@ -3,6 +3,72 @@
 
 var x = $('.form-group')
 
+function createCommentBox(formValues) {
+    var fValue = {
+        content:"I don't like your little games Don't like your tilted stage The role you made me play of the fool No, I don't like you I don't like your perfect crime How you laugh when you lie\nYou said the gun was mine Isn't cool, no, I don't like you (oh!) But I got smarter, I got harder in the nick of time Honey, I rose up from the dead, I do it all the time",
+        email:"baoblink@gmail.com",
+        name:"Bao Huynh Van Nguyen",
+        phone:"0905920814",
+        star: 4
+    }
+    
+    // Create box-star
+    const rvBoxStar = document.createElement("div")
+    const text = '<div class="box-star">\n<i class="ti-star"></i>\n</div>'
+    var boxInnerHTML = ''
+
+    for (i = 0; i < formValues.star; i++)
+    {
+        boxInnerHTML += text
+    }
+
+    rvBoxStar.innerHTML = boxInnerHTML
+    rvBoxStar.classList.add('review-box-star')
+    
+    // Create pDate
+    const pDate = document.createElement('p')
+    pDate.innerHTML = 'Current'
+    pDate.classList.add('review-box-date')
+
+    // Create review-box-header
+    const rvBoxHeader = document.createElement("div")
+    rvBoxHeader.appendChild(rvBoxStar)
+    rvBoxHeader.appendChild(pDate)
+    rvBoxHeader.classList.add("review-box-header")
+
+    // Create review-name
+    const rvName = document.createElement('h2')
+    rvName.innerHTML = formValues.fullName
+    rvName.classList.add('review-name')
+
+    // Create review-content
+    // const rvText = formValues.content.slice(0, 65) + "..."
+    const rvContent = document.createElement('p')
+    rvContent.innerHTML = formValues.content
+    rvContent.classList.add('review-content')
+
+    // Create box-content
+    const rvBoxContent = document.createElement('div')
+    rvBoxContent.appendChild(rvName)
+    rvBoxContent.appendChild(rvContent)
+    rvBoxContent.classList.add('review-box-content')
+
+    // Create total review-box-readmore
+    const rvBoxContainer = document.createElement('div')
+    rvBoxContainer.appendChild(rvBoxHeader)
+    rvBoxContainer.appendChild(rvBoxContent)
+    rvBoxContainer.classList.add('review-container')
+
+    const rvBoxTotal = document.createElement('div')
+    rvBoxTotal.appendChild(rvBoxContainer)
+    rvBoxTotal.classList.add('review-readmore-hidden')
+    
+    // Add to review-readmore-box
+    const rvBoxReadmore = $('.review-readmore-box')
+    const rvBoxes = rvBoxReadmore.querySelectorAll('.review-readmore-hidden')
+    rvBoxReadmore.appendChild(rvBoxTotal)
+}
+
 // Contructor function
 function Validator(option) {
 
@@ -80,7 +146,17 @@ function Validator(option) {
                         return values
                     }, {})
 
+                    const ratingBtns = $$('.comment-box .comment-rating input')
+                    var id
+                    ratingBtns.forEach(rating => {
+                        if(rating.checked)
+                            id = rating.id[rating.id.length - 1]
+                    })
+
+                    formValues['star'] = Number(id)
+
                     option.onSubmit(formValues)
+                    createCommentBox(formValues)
                 }
             }
 
@@ -147,12 +223,19 @@ Validator.minLength = (selector, min, message) => {
     }
 }
 
-Validator.isConfirmed = (selector, getValue, message) => {
-    return {
-        selector,
-        test(value) {
-            var password = getValue()
-            return value === password ? undefined : message || 'Giá trị nhập vào không chính xác' 
-        }
+Validator({
+    form: '#comment-form',
+    formGroupSelector: '.form-group',
+    errorSelector: '.form-message',
+    rules: [
+        Validator.isRequired('#comment-name', 'Please fill your full name'),
+        Validator.isRequired('#comment-email', 'Please fill your email'),
+        Validator.isEmail('#comment-email', 'Please fill correct email'),
+        Validator.isRequired('#comment-phone'),
+        Validator.minLength('#comment-phone', 10),
+        Validator.isRequired('#comment-text'),
+    ],
+    onSubmit(data) {
+        console.log(data)
     }
-}
+});

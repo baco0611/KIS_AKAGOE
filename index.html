@@ -359,7 +359,7 @@
                             <div class="comment-input">
                                 <div class="form-group">
                                     <label for="comment-name">Name</label>
-                                    <input id="comment-name" name="name" class="name" type="text" placeholder="Your name">
+                                    <input id="comment-name" name="fullName" class="name" type="text" placeholder="Your name">
                                     <span class="form-message"></span>
                                 </div>
                                 <div class="form-group">
@@ -394,23 +394,5 @@
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/review.js"></script>
         <script src="./assets/js/validcomment.js"></script>
-        <script>
-            Validator({
-            form: '#comment-form',
-            formGroupSelector: '.form-group',
-            errorSelector: '.form-message',
-            rules: [
-                Validator.isRequired('#comment-name', 'Please fill your full name'),
-                Validator.isRequired('#comment-email', 'Please fill your email'),
-                Validator.isEmail('#comment-email', 'Please fill correct email'),
-                Validator.isRequired('#comment-phone'),
-                Validator.minLength('#comment-phone', 10),
-                Validator.isRequired('#comment-text'),
-            ],
-            onSubmit(data) {
-                console.log(data)
-            }
-        });
-        </script>
     </body>
 </html>

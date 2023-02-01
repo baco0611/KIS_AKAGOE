@@ -107,6 +107,7 @@ const cmtBox = $('.comment-box')
 const cmtCon = $('.comment-container')
 const cmtConOff = cmtCon.innerHTML
 const closeBtn = $('.comment-container i')
+const submitBtn = $('.comment-box button')
 
 cmtBtn.onclick = () => {
     cmtBox.classList.add('open')
@@ -125,3 +126,12 @@ cmtCon.onclick = e => {
     e.stopPropagation()
 }
 
+submitBtn.onclick = (e) => {
+    // e.preventDefault()
+    cmtBox.classList.add('out')
+    setTimeout(() => {
+        cmtBox.classList.remove('open')
+        cmtCon.innerHTML = cmtConOff
+        cmtBox.classList.remove('out')
+    }, 500)
+}
