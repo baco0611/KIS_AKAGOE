@@ -43,7 +43,7 @@
     }
 }
 
-.review-content {
+.review-content-containt {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,9 +111,11 @@
         width: 100%;
         transition-property: transform;
         box-sizing: content-box;
+        gap: 15px;
         & .review-box {
             flex-shrink: 0;
-            min-width: 250px;
+            width: 250px;
+            // min-width: 250px;
             height: 100%;
             background-color: white;
             border-bottom-right-radius: 15px;
@@ -352,6 +354,14 @@
     .review-box-header {
         margin: 0;
     }
+}
+
+.review-box .review-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .comment-box {

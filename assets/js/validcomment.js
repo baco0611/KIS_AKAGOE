@@ -44,8 +44,9 @@ function createCommentBox(formValues) {
     // Create review-content
     // const rvText = formValues.content.slice(0, 65) + "..."
     const rvContent = document.createElement('p')
-    rvContent.innerHTML = formValues.content
+    rvContent.textContent = formValues.content
     rvContent.classList.add('review-content')
+    console.log(rvContent);
 
     // Create box-content
     const rvBoxContent = document.createElement('div')
@@ -65,7 +66,8 @@ function createCommentBox(formValues) {
     
     // Add to review-readmore-box
     const rvBoxReadmore = $('.review-readmore-box')
-    const rvBoxes = rvBoxReadmore.querySelectorAll('.review-readmore-hidden')
+    const id = String(Array.from(rvBoxReadmore.querySelectorAll('.review-readmore-hidden')).length + 1)
+    rvBoxTotal.id = 'rv-' + id
     rvBoxReadmore.appendChild(rvBoxTotal)
 }
 

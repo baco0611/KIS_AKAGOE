@@ -2,21 +2,21 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 // Make swiper of comment
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 4,
-    spaceBetween: 30,
-    slidesPerGroup: 4,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-})
+// var swiper = new Swiper(".mySwiper", {
+//     slidesPerView: 4,
+//     spaceBetween: 30,
+//     slidesPerGroup: 4,
+//     loop: true,
+//     loopFillGroupWithBlank: true,
+//     pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+// })
 
 // Handle readmore
 var readmoreBtns = $$('.review-main .review-readmore')
