@@ -356,6 +356,10 @@
     }
 }
 
+.review-content {
+    word-wrap: break-word;
+}
+
 .review-box .review-content {
     overflow: hidden;
     text-overflow: ellipsis;

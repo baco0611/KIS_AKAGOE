@@ -777,6 +777,10 @@ body {
   margin: 0;
 }
 
+.review-content {
+  word-wrap: break-word;
+}
+
 .review-box .review-content {
   overflow: hidden;
   text-overflow: ellipsis;
