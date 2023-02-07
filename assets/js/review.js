@@ -101,7 +101,7 @@ function restartStar()
     })
 }
 
-// Handle add comment
+// Handle open comment box
 const cmtBtn = $('.cmt-btn')
 const cmtBox = $('.comment-box')
 const cmtCon = $('.comment-container')
