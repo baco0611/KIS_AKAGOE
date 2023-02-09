@@ -51,7 +51,8 @@ function createCommentBox(formValues) {
     rvBoxContent.appendChild(rvContent)
     rvBoxContent.classList.add('review-box-content')
 
-    // Create total review-box-readmore-hidden
+    //Create total review-box-readmore-hidden
+    console.log(rvBoxHeader, typeof rvBoxHeader)
     const rvBoxContainer = document.createElement('div')
     rvBoxContainer.appendChild(rvBoxHeader)
     rvBoxContainer.appendChild(rvBoxContent)
@@ -68,6 +69,63 @@ function createCommentBox(formValues) {
     cmtBoxTotal.id = 'rv-' + id
     rvBoxReadmore.appendChild(cmtBoxTotal)
 
+
+    // Do it again
+    // Create box-star
+    const rvBoxStar2 = document.createElement("div")
+    const text2 = '<div class="box-star">\n<i class="ti-star"></i>\n</div>'
+    var boxInnerHTML = ''
+
+    for (var i = 0; i < formValues.star; i++)
+    {
+        boxInnerHTML += text2
+    }
+
+    rvBoxStar2.innerHTML = boxInnerHTML
+    rvBoxStar2.classList.add('review-box-star')
+    
+    // Create pDate
+    const pDate2 = document.createElement('p')
+    if(formValues.time)
+    {
+        pDate2.innerHTML = formValues.time
+    } else pDate2.innerHTML = 'Current'
+    pDate2.classList.add('review-box-date')
+
+    // Create review-box-header
+    const rvBoxHeader2 = document.createElement("div")
+    rvBoxHeader2.appendChild(rvBoxStar2)
+    rvBoxHeader2.appendChild(pDate2)
+    rvBoxHeader2.classList.add("review-box-header")
+
+    // Create review-name
+    const rvName2 = document.createElement('h2')
+    rvName2.innerHTML = formValues.fullName
+    rvName2.classList.add('review-name')
+
+    // Create review-content
+    // const rvText = formValues.content.slice(0, 65) + "..."
+    const rvContent2 = document.createElement('p')
+    rvContent2.textContent = formValues.content
+    rvContent2.classList.add('review-content')
+
+    // Create box-content
+    const rvBoxContent2 = document.createElement('div')
+    rvBoxContent2.appendChild(rvName2)
+    rvBoxContent2.appendChild(rvContent2)
+    rvBoxContent2.classList.add('review-box-content')
+
+    //Create total review-box-readmore-hidden
+    
+    const rvBoxContainer2 = document.createElement('div')
+    rvBoxContainer2.appendChild(rvBoxHeader2)
+    rvBoxContainer2.appendChild(rvBoxContent2)
+    rvBoxContainer2.classList.add('review-container')
+
+    const cmtBoxTotal2 = document.createElement('div')
+    cmtBoxTotal2.appendChild(rvBoxContainer2)
+    cmtBoxTotal2.classList.add('review-readmore-hidden')
+
     const line = document.createElement('div')
     line.classList.add('line')
 
@@ -76,13 +134,13 @@ function createCommentBox(formValues) {
     readmoreBtn.classList.add('review-readmore')
     readmoreBtn.innerText = 'Read more'
 
-    rvBoxContent.appendChild(line)
-    rvBoxContent.appendChild(readmoreBtn)
+    rvBoxContent2.appendChild(line)
+    rvBoxContent2.appendChild(readmoreBtn)
 
     // Create comment not hidden (open)
     const rvBoxContainerOpen = document.createElement('div')
-    rvBoxContainerOpen.appendChild(rvBoxHeader)
-    rvBoxContainerOpen.appendChild(rvBoxContent)
+    rvBoxContainerOpen.appendChild(rvBoxHeader2)
+    rvBoxContainerOpen.appendChild(rvBoxContent2)
     rvBoxContainerOpen.classList.add('review-box')
     rvBoxContainerOpen.classList.add('swiper-slide')
 
