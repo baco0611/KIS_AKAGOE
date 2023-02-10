@@ -1,6 +1,3 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-
 // Make swiper of comment
 // var swiper = new Swiper(".mySwiper", {
 //     slidesPerView: 4,
@@ -62,7 +59,6 @@ function restartStar()
 {
 
     const stars = $$('.comment-rating input')
-    // console.log(stars)
     
     stars.forEach(star => {
         const header = $('.comment-box form header')
@@ -126,12 +122,43 @@ cmtCon.onclick = e => {
     e.stopPropagation()
 }
 
-submitBtn.onclick = (e) => {
-    // e.preventDefault()
+function restartTheForm() {
     cmtBox.classList.add('out')
     setTimeout(() => {
         cmtBox.classList.remove('open')
-        cmtCon.innerHTML = cmtConOff
+        
+        // Restart Star box
+        const stars = $$('.comment-rating input')
+        stars.forEach(star => {
+            star.checked = false
+        })
+        
+        // Restart Input box
+        const inputs = $$('.comment-input input')
+        inputs.forEach(input => {
+            input.value = ''
+        })
+
+        const textArea = $('.comment-input textarea')
+        textArea.value =''
+
+        // Hide form input
+        const formInput = $('.comment-input')
+        formInput.removeAttribute("style")
+
+        submitBtn.removeAttribute("style")
+
+        // Open h1
+        const h1 = $('form h1')
+        h1.removeAttribute('class')
+
+        // Delete content of header
+        const header = $('form header')
+        header.innerHTML = ''
+
         cmtBox.classList.remove('out')
     }, 500)
+    // e.preventDefault()
 }
+
+export default restartTheForm

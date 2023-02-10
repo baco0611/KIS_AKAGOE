@@ -1,4 +1,6 @@
-function createCommentBox(formValues) {
+import readMoreHandling from './readmore.js'
+
+function createCommentBox(formValues, element) {
     var fValue = {
         content:"I don't like your little games Don't like your tilted stage The role you made me play of the fool No, I don't like you I don't like your perfect crime How you laugh when you lie\nYou said the gun was mine Isn't cool, no, I don't like you (oh!) But I got smarter, I got harder in the nick of time Honey, I rose up from the dead, I do it all the time",
         email:"baoblink@gmail.com",
@@ -52,7 +54,6 @@ function createCommentBox(formValues) {
     rvBoxContent.classList.add('review-box-content')
 
     //Create total review-box-readmore-hidden
-    console.log(rvBoxHeader, typeof rvBoxHeader)
     const rvBoxContainer = document.createElement('div')
     rvBoxContainer.appendChild(rvBoxHeader)
     rvBoxContainer.appendChild(rvBoxContent)
@@ -145,8 +146,17 @@ function createCommentBox(formValues) {
     rvBoxContainerOpen.classList.add('swiper-slide')
 
     // Add to UI
-    const swiperWrapper = $('.review-main .swiper-wrapper')
-    swiperWrapper.appendChild(rvBoxContainerOpen)
+    if(!element)
+    {
+        const swiperWrapper = $('.review-main .swiper-wrapper')
+        swiperWrapper.appendChild(rvBoxContainerOpen)
+    } else {
+        console.log(element)
+        // const mainElement = $('.review-main .main-box')
+        element.after(rvBoxContainerOpen)
+        readMoreHandling()
+    }
+
 }
 
 export default createCommentBox

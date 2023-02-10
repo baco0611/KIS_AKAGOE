@@ -1,12 +1,18 @@
 import createCommentBox from "./handelCreateComment.js";
-import readMoreHandling from "./readmore.js";
 
 var commentsApi = 'http://localhost:3000/comment'
 
 fetch(commentsApi)
     .then(response => response.json())
     .then(comments => {
-        console.log(comments)
         comments.forEach(comment => createCommentBox(comment))
-        readMoreHandling()
     })
+    .catch(() => {
+        console.log('Can\'t load the comment')
+    }) 
+
+var API = 'http://localhost:3000/feedbacks'
+
+// fetch(API)
+//     .then(response => response.json())
+//     .then(data => console.log(data))
