@@ -120,8 +120,9 @@
             background-color: white;
             border-bottom-right-radius: 15px;
             border-bottom-left-radius: 15px;
-            transition-property: transform;
-            transition: transform 0.4s;
+            // transition-property: transform;
+            // transition: transform 0.4s;
+            animation: fadeInOut 0.5s linear;
         }
         & .main-box {
             border-bottom-left-radius: 0px;
@@ -223,7 +224,19 @@
 }
 
 .pagination {
-    bottom: -10px;
+
+    bottom: -25px;
+    width: 100%;
+
+    & input {
+        display: none;
+    }
+
+    & .active {
+        transform: scale(1.8);
+        background-color: rgba(26, 26, 26, 0.6);
+        box-shadow: 0px 0px 0px 3px #dddddd24;
+    }
 }
 
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal
@@ -236,15 +249,15 @@
     height: 100%;
 }
 
-.swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    border-radius: 50%;
-     &:hover {
-        opacity: 0.65;
-     }
-}
+// .swiper-pagination-bullet {
+//     width: 10px;
+//     height: 10px;
+//     display: inline-block;
+//     border-radius: 50%;
+//      &:hover {
+//         opacity: 0.65;
+//      }
+// }
 
 .swiper-pagination-bullet-active {
     opacity: 1;
@@ -300,7 +313,6 @@
         font-size: 18px;
         line-height: 26px;
         font-weight: 500;
-        letter-spacing: 1px;
     }
 
     & p {

@@ -1,4 +1,5 @@
 import readMoreHandling from './readmore.js'
+import makeSwiper from './swiper.js'
 
 function createCommentBox(formValues, element) {
     var fValue = {
@@ -144,19 +145,19 @@ function createCommentBox(formValues, element) {
     rvBoxContainerOpen.appendChild(rvBoxContent2)
     rvBoxContainerOpen.classList.add('review-box')
     rvBoxContainerOpen.classList.add('swiper-slide')
+    rvBoxContainerOpen.classList.add('item')
 
     // Add to UI
     if(!element)
     {
-        const swiperWrapper = $('.review-main .swiper-wrapper')
+        const swiperWrapper = $('.review-main .main')
         swiperWrapper.appendChild(rvBoxContainerOpen)
     } else {
-        console.log(element)
         // const mainElement = $('.review-main .main-box')
         element.after(rvBoxContainerOpen)
-        readMoreHandling()
     }
-
+    readMoreHandling()
+    makeSwiper()
 }
 
 export default createCommentBox

@@ -7,6 +7,8 @@
         <link rel="shortcut icon" href="./assets/img/logo/AKAGOE.png">
         <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="./node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
         <link rel="stylesheet" href="./assets/sass/css/animate.css">
         <link rel="stylesheet" href="./assets/sass/css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
         <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
         <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script> 
         <title>赤声 - AKAGOE</title>
@@ -177,7 +180,7 @@
                 </div>
                 <div class="review-main">
                     <div class="swiper mySwiper">
-                        <div class="main swiper-wrapper">
+                        <div class="main">
                             <div class="main-box review-box swiper-slide">
                                 <h4>Excellent</h4>
                                 <div class="main-box-star">
@@ -249,7 +252,16 @@
                     </div>
                     <div class="swiper-button-next next-btn"></div>
                     <div class="swiper-button-prev back-btn"></div>
-                    <div class="pagination swiper-pagination"></div>
+                    <div class="pagination swiper-pagination">
+                    
+                        <input type="radio" name="review" id="page0" checked>
+
+                        <div class="dots">
+                            <label for="page0" class="active"></label>
+                        </div>
+
+
+                    </div>
                 </div>
                 <div class="review-readmore-box">
                     <!-- <div class="review-readmore-hidden" id="rv-1">
@@ -333,9 +345,9 @@
         <script src="./assets/js/explore.js"></script>
         <!-- <script src="./assets/js/three.js"></script> -->
         <script type="module" src="./assets/js/character.js"></script>
-        <script src="./assets/js/swiper-bundle.min.js"></script>
         <script type="module" src="./assets/js/review.js"></script>
         <script type="module" src="./assets/js/validcomment.js"></script>
         <script type="module" src="./assets/js/loadComment.js"></script>
+        <script type="module" src="./assets/js/swiper.js"></script>
     </body>
 </html>

@@ -1,18 +1,18 @@
 import createCommentBox from "./handelCreateComment.js";
 
-var commentsApi = 'http://localhost:3000/comment'
+
+var commentsApi = 'http://localhost:8081/feedback/TimeAsc'
 
 fetch(commentsApi)
     .then(response => response.json())
     .then(comments => {
-        comments.forEach(comment => createCommentBox(comment))
+        // console.log(comments.listFeedback)
+        comments.listFeedback.forEach(comment => createCommentBox(comment))
     })
-    .catch(() => {
+    .then(() => {
+
+    })
+    .catch((error) => {
+        console.log(error)
         console.log('Can\'t load the comment')
     }) 
-
-var API = 'http://localhost:3000/feedbacks'
-
-// fetch(API)
-//     .then(response => response.json())
-//     .then(data => console.log(data))
