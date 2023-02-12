@@ -198,8 +198,13 @@
     }
 }
 
+.swiper {
+    overflow: hidden;
+}
+
 .back-btn, .next-btn{
     position: absolute;
+    top: 0;
     color: white;
     font-weight: 1000;
     font-size: 50px;
@@ -207,19 +212,20 @@
     overflow: none;
     background-color: transparent;
     border-color: transparent;
+    cursor: pointer;
 
+    width: 50px;
+    height: 100%;
     &:hover {
         opacity: 0.5;
     }
 }
 
 .back-btn {
-    top: 50%;
     left: -75px;
 }
 
 .next-btn {
-    top: 50%;
     right: -75px;
 }
 

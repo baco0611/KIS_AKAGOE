@@ -1,3 +1,4 @@
+import postCommentToBe from './postCommentToBE.js'
 import readMoreHandling from './readmore.js'
 import makeSwiper from './swiper.js'
 
@@ -9,6 +10,9 @@ function createCommentBox(formValues, element) {
         phone:"0905920814",
         star: 4
     }
+    // console.log(formValues.content)
+    formValues.content = formValues.content.split("\n").join(" <br> ")
+    // console.log(formValues.contenst)
     
     // Create box-star
     const rvBoxStar = document.createElement("div")
@@ -45,7 +49,7 @@ function createCommentBox(formValues, element) {
     // Create review-content
     // const rvText = formValues.content.slice(0, 65) + "..."
     const rvContent = document.createElement('p')
-    rvContent.textContent = formValues.content
+    rvContent.innerHTML = formValues.content
     rvContent.classList.add('review-content')
 
     // Create box-content
@@ -108,7 +112,7 @@ function createCommentBox(formValues, element) {
     // Create review-content
     // const rvText = formValues.content.slice(0, 65) + "..."
     const rvContent2 = document.createElement('p')
-    rvContent2.textContent = formValues.content
+    rvContent2.innerHTML = formValues.content
     rvContent2.classList.add('review-content')
 
     // Create box-content

@@ -93,7 +93,7 @@ function Validator(option) {
                     // option.onSubmit(formValues)
                     const mainBox = $('.review-main .main-box')
                     createCommentBox(formValues, mainBox)
-                    // postCommentToBe(formValues)
+                    postCommentToBe(formValues)
                     restartTheForm()
                 }
             }

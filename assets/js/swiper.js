@@ -128,6 +128,7 @@ function makeSwiper() {
         
         for(; i<numberClose; i++)
         {
+            console.log(swiperItems[i]);
             swiperItems[i].classList.add('none')
         }
 
