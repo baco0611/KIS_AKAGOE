@@ -1,15 +1,7 @@
-import postCommentToBe from './postCommentToBE.js'
 import readMoreHandling from './readmore.js'
 import makeSwiper from './swiper.js'
 
 function createCommentBox(formValues, element) {
-    var fValue = {
-        content:"I don't like your little games Don't like your tilted stage The role you made me play of the fool No, I don't like you I don't like your perfect crime How you laugh when you lie\nYou said the gun was mine Isn't cool, no, I don't like you (oh!) But I got smarter, I got harder in the nick of time Honey, I rose up from the dead, I do it all the time",
-        email:"baoblink@gmail.com",
-        name:"Bao Huynh Van Nguyen",
-        phone:"0905920814",
-        star: 4
-    }
     // console.log(formValues.content)
     formValues.content = formValues.content.split("\n").join(" <br> ")
     // console.log(formValues.contenst)
@@ -164,4 +156,68 @@ function createCommentBox(formValues, element) {
     makeSwiper()
 }
 
-export default createCommentBox
+function createMainBox() {
+    const mainBoxApi = 'http://localhost:8081/mainbox'
+    // const mainBoxApi = 'http://localhost:3000/mainbox'
+
+    
+
+    fetch(mainBoxApi)
+    .then(response => response.json())
+    .then(data => {
+        // {
+        //     "numberFB": 12,
+        //     "avgStar": 3
+        // }
+
+
+        // Create header of mainBox
+        const header = document.createElement('h4')
+        header.innerHTML = 'Excellent'
+
+        // Create box star
+        const mainBoxStar = document.createElement("div")
+        const text = 
+        `<div class="box-star">
+            <div class="main-back">
+                <i class="ti-star"></i>
+            </div>
+        </div>`
+
+        var boxInnerHTML = ''
+
+        for (var i = 0; i < data.avgStar; i++)
+        {
+            boxInnerHTML += text
+        }
+
+        mainBoxStar.innerHTML = boxInnerHTML
+        mainBoxStar.classList.add('main-box-star')
+
+        // Create description
+        const description = document.createElement('h3')
+        description.innerHTML = `Based on <span class="number bold">${data.numberFB}</span> <span class="bold">reviews</span>`
+
+        // Create line
+        const line = document.createElement('div')
+        line.classList.add('line')
+
+        // Create footer of mainBox
+        const footer = document.createElement('h5')
+        footer.innerHTML = 'akagoe reviews database'
+
+        // Create mainBox
+        const mainBox = document.createElement('div')
+        mainBox.appendChild(header)
+        mainBox.appendChild(mainBoxStar)
+        mainBox.appendChild(description)
+        mainBox.appendChild(line)
+        mainBox.appendChild(footer)
+        mainBox.classList.add('main-box', 'review-box', 'swiper-slide')
+
+        const swiperWrapper = $('.review-main .main')
+        swiperWrapper.appendChild(mainBox)
+    })    
+}
+
+export {createCommentBox, createMainBox}

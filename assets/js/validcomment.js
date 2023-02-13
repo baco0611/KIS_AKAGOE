@@ -161,6 +161,16 @@ Validator.minLength = (selector, min, message) => {
     }
 }
 
+Validator.isPhoneNumber = (selector, message) => {
+    return {
+        selector,
+        test(value) {
+            var regex = /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/
+            return regex.test(value) ? undefined : message || `Vui lòng nhập mật khẩu ít nhất ${min} ký tự`
+        }
+    }
+}
+
 Validator({
     form: '#comment-form',
     formGroupSelector: '.form-group',
@@ -170,7 +180,8 @@ Validator({
         Validator.isRequired('#comment-email', 'Please fill your email'),
         Validator.isEmail('#comment-email', 'Please fill correct email'),
         Validator.isRequired('#comment-phone'),
-        Validator.minLength('#comment-phone', 10),
+        Validator.minLength('#comment-phone', 10, "Please fill the correct phone number"),
+        Validator.isPhoneNumber('#comment-phone', "Sai tề"),
         Validator.isRequired('#comment-text'),
     ],
     onSubmit(data) {

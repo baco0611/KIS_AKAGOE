@@ -4,10 +4,12 @@ function makeSwiper() {
     // Make pagination
 
     const wraper = $('.review-content-containt.wraper')
-    var swiperWidth = wraper.offsetWidth * 80/100
+    var swiperWidth = wraper.offsetWidth * 100/100
 
     const numberOfItems = Math.floor(swiperWidth / swiperItems[0].offsetWidth)
     const numberOfPages = Math.ceil(swiperItems.length/ numberOfItems)
+    // console.log(swiperWidth, swiperItems[0].offsetWidth)
+    // console.log(numberOfItems, numberOfPages)
     const pagination = $('.pagination')
     pagination.innerHTML = `<input type="radio" name="review" id="page0" checked>
 
@@ -128,7 +130,6 @@ function makeSwiper() {
         
         for(; i<numberClose; i++)
         {
-            console.log(swiperItems[i]);
             swiperItems[i].classList.add('none')
         }
 

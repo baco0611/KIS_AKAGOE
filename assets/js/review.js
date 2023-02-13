@@ -1,4 +1,12 @@
-// Make swiper of comment
+import fetchAPI from "./loadComment.js"
+
+// fetch API based on value of sort btn
+const sortBtn = $('.review-content-containt .sort-btn select')
+sortBtn.onchange = () => {
+    // console.log(sortBtn.value)
+    let commentsApi = "http://localhost:8081" + sortBtn.value
+    fetchAPI(commentsApi)
+}
 
 // Handle readmore
 var readmoreBtns = $$('.review-main .review-readmore')
