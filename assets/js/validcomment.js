@@ -1,6 +1,6 @@
 // const $ = document.querySelector.bind(document);
 // const $$ = document.querySelectorAll.bind(document);
-import createCommentBox from "./handelCreateComment.js";
+import {createCommentBox} from "./handelCreateComment.js";
 import restartTheForm from "./review.js";
 import postCommentToBe from "./postCommentToBE.js";
 
