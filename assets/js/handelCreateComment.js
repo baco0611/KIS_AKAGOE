@@ -156,23 +156,8 @@ function createCommentBox(formValues, element) {
     makeSwiper()
 }
 
-function createMainBox() {
-    const mainBoxApi = 'http://localhost:8081/mainbox'
-    // const mainBoxApi = 'http://localhost:3000/mainbox'
-
-    
-
-    fetch(mainBoxApi)
-    .then(response => response.json())
-    .then(data => {
-        // {
-        //     "numberFB": 12,
-        //     "avgStar": 3
-        // }
-
-
-        // Create header of mainBox
-        const header = document.createElement('h4')
+function createMainBox(data) {
+    const header = document.createElement('h4')
         header.innerHTML = 'Excellent'
 
         // Create box star
@@ -186,7 +171,7 @@ function createMainBox() {
 
         var boxInnerHTML = ''
 
-        for (var i = 0; i < data.avgStar; i++)
+        for (var i = 0; i < Number(data.avgStar); i++)
         {
             boxInnerHTML += text
         }
@@ -217,7 +202,7 @@ function createMainBox() {
 
         const swiperWrapper = $('.review-main .main')
         swiperWrapper.appendChild(mainBox)
-    })    
+
 }
 
 export {createCommentBox, createMainBox}
