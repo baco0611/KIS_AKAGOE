@@ -271,7 +271,7 @@ body {
 }
 .explore .content p {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 26px;
   line-height: 35px;
   text-align: justify;
   letter-spacing: 1px;
@@ -558,7 +558,6 @@ body {
   background-color: white;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
-  animation: fadeInOut 0.5s linear;
 }
 .review-main .main .main-box {
   border-bottom-left-radius: 0px;
@@ -987,6 +986,15 @@ body {
 
 .out {
   animation: fadeOut 0.5s linear;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

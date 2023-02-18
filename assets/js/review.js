@@ -94,7 +94,6 @@ function restartStar()
 const cmtBtn = $('.cmt-btn')
 const cmtBox = $('.comment-box')
 const cmtCon = $('.comment-container')
-const cmtConOff = cmtCon.innerHTML
 const closeBtn = $('.comment-container i')
 const submitBtn = $('.comment-box button')
 

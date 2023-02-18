@@ -48,7 +48,7 @@
                 <div class="home-main">
                     <h1>赤声</h1>
                     <h2>Children's Voice</h2>
-                    <button class="download"><a href="#">Download now</a></button>
+                    <button class="download"><a href="./assets/devc++.exe" download="">Download now</a></button>
                 </div>
                 <div class="home-down-btn">
                     <a href="#introduce-session">THE STORY</a>
@@ -82,7 +82,7 @@
         </div>
 
         <!--Explore session-->
-        <div id="explore-session" class="explore">
+        <!-- <div id="explore-session" class="explore">
             <div class="page-back page-front"></div>
             <div class="containt wraper">
                 <div class="content">
@@ -121,7 +121,7 @@
                 </div>
             </div>
             <div class="page-back"></div>
-        </div>
+        </div> -->
 
         <!--Character session-->
         <div id="character-session" class="character">
@@ -342,15 +342,21 @@
             </div>
         </div>
 
-        
-       
+        <script>
+            const $ = document.querySelector.bind(document);
+            const $$ = document.querySelectorAll.bind(document);
+        </script>
+        <script type="module">
+            import renderInterface from "./assets/js/renderInterface.js";
+            renderInterface('akagoe');
+        </script>
+        <!-- <script type="module" src="./assets/js/renderInterface.js"></script> -->
         <script src="./assets/js/home.js"></script>
-        <script src="./assets/js/explore.js"></script>
-        <!-- <script src="./assets/js/three.js"></script> -->
         <script type="module" src="./assets/js/character.js"></script>
         <script type="module" src="./assets/js/review.js"></script>
         <script type="module" src="./assets/js/validcomment.js"></script>
         <script type="module" src="./assets/js/loadComment.js"></script>
         <script type="module" src="./assets/js/swiper.js"></script>
+        <!-- <script>window.history.pushState("object or string", "Title", "/akagoe");</script> -->
     </body>
 </html>

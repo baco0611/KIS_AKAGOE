@@ -27,18 +27,6 @@ function fetchAPI(API) {
     })
     .catch(() => {
     })
-    
-    // fetch(API)
-    // .then(response => response.json())
-    // .then(comments => {
-    //     // console.log(comments.listFeedback)
-    //     comments.listFeedback.forEach(comment => createCommentBox(comment))
-    //     // comments.forEach(comment => createCommentBox(comment))
-    // })
-    // .catch((error) => {
-    //     console.log(error)
-    //     console.log('Can\'t load the comment')
-    // }) 
 }
 
 const sortBtn = $('.review-content-containt .sort-btn select')

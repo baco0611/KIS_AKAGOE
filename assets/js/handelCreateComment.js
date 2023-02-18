@@ -142,6 +142,7 @@ function createCommentBox(formValues, element) {
     rvBoxContainerOpen.classList.add('review-box')
     rvBoxContainerOpen.classList.add('swiper-slide')
     rvBoxContainerOpen.classList.add('item')
+    rvBoxContainerOpen.setAttribute('open', '')
 
     // Add to UI
     if(!element)
