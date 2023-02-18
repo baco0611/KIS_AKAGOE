@@ -4,11 +4,19 @@ function renderInterface(name) {
     // Xử lý url API ở đây
 
     const exploreApi = "http://localhost:3000/explore";
+    const characterApi = "http://localhost:3000/character"
     
     fetch(exploreApi)
     .then((response) => response.json())
     .then((data) => {
         createExplore(data.listResult)
+    })
+    .then(() => {
+        fetch(characterApi)
+        .then(response => response.json())
+        .then(data => {
+            createCharacter(data.listResult[0])
+        })
     })
 }
 
@@ -116,4 +124,67 @@ function createExplore(data) {
   handleExplore();
 }
 
+function createCharacter(data) {
+    //I. Create character content
+    const heading = document.createElement('div')
+    heading.className = "heading"
+    const h3 = document.createElement('h3')
+    const h1 = document.createElement('h1')
+    h3.innerText = 'INTRODUCE'
+    h1.innerText = 'CHARACTER'
+    heading.appendChild(h3)
+    heading.appendChild(h1)
+
+    const p = document.createElement('p')
+    p.innerHTML = data.description.replace(/\n/g, "<br />")
+    
+    const characterContent = document.createElement('div')
+    characterContent.className = 'character-content'
+    characterContent.appendChild(heading)
+    characterContent.appendChild(p)
+
+    //II. Create character img
+    const characterImg = document.createElement('div')
+    characterImg.className = 'character-img'
+    if(data.imageType == '3D')
+    {
+        const modelViewer = document.createElement('model-viewer')
+        modelViewer.setAttribute('src', data.imageLink)
+        modelViewer.setAttribute('camera-controls', '')
+        modelViewer.setAttribute('auto-rotate', '')
+        modelViewer.setAttribute('ar', '')
+
+        const pImg = document.createElement('p')
+        pImg.innerHTML = 'Dùng chuột kéo thả để xem và con lăn để zoom'
+
+        characterImg.appendChild(modelViewer)
+        characterImg.appendChild(pImg)
+    } else {
+        const image = document.createElement('img')
+        image.style.backgroundImage = `url(${data.imageLink})`
+
+        characterImg.appendChild(image)
+    }
+
+    //Create section
+    //III.1. Create page-front
+    const pageFront = document.createElement("div");
+    pageFront.classList.add("page-back", "page-front");
+
+    //III.2. Create wraper
+    const contentWraper = document.createElement("div");
+    contentWraper.classList.add("containt", "wraper");
+    contentWraper.appendChild(characterContent);
+    contentWraper.appendChild(characterImg);
+
+    //Create all
+    const characterSection = document.createElement("div");
+    characterSection.id = "character-session";
+    characterSection.className = "character";
+    characterSection.appendChild(pageFront);
+    characterSection.appendChild(contentWraper);
+
+    document.querySelector("body").appendChild(characterSection);
+
+}
 export default renderInterface
