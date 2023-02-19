@@ -29,7 +29,7 @@ function renderInterface(format) {
 
     // const exploreApi = `http://localhost:8081/${format.name}/explore/${format.language}`
     // const characterApi = `http://localhost:8081/${format.name}/character/${format.language}`
-
+    // http://localhost:8081/character/eng/...
     // const exploreApipush = `http://localhost:8081/${format.name}/explore/pushData`
     // const characterApipush = `http://localhost:8081/${format.name}/about/pushData`
     
@@ -79,21 +79,78 @@ function renderInterface(format) {
                         createReview(format.name)
                     })
                     .then(() => {
+                        fetch(backgroundApi)
+                        .then(response => response.json())
+                        .then(data => {
+                            changeBackground(data.background)
+                        })
+                    })
+                    .then(() => {
                         document.querySelector("#root").removeChild(loaderDiv);
                     })
                 })
             })
         })
     })
+}
 
-
-
-
-
+function  changeBackground(data) {
+    data.forEach(background => {
+        switch(background.pageName)
+        {
+            case "main":
+            if(document.querySelector('#home-session')) {
+                if(background.imageLink[0] != '#')
+                    document.querySelector('#home-session').style.background = `url(${background.imageLink}) no-repeat`
+                else
+                    document.querySelector('#home-session').style.background = background.imageLink
+            }    
+                break
+            case "introduce":
+            if(document.querySelector('#introduce-session')) {
+                if(background.imageLink[0] != '#')
+                    document.querySelector('#introduce-session').style.background = `url(${background.imageLink}) no-repeat`
+                else
+                    document.querySelector('#introduce-session').style.background = background.imageLink
+            }    
+                break
+            case "explore":
+            if(document.querySelector('#explore-session')) {
+                if(background.imageLink[0] != '#')
+                    document.querySelector('#explore-session').style.background = `url(${background.imageLink}) no-repeat`
+                else
+                    document.querySelector('#explore-session').style.background = background.imageLink
+            }    
+                break
+            case "character":
+            if(document.querySelector('#character-session')) {
+                if(background.imageLink[0] != '#')
+                    document.querySelector('#character-session').style.background = `url(${background.imageLink}) no-repeat`
+                else
+                    document.querySelector('#character-session').style.background = background.imageLink
+            }    
+                break
+            case "review":
+            if(document.querySelector('#review-session')) {
+                if(background.imageLink[0] != '#')
+                    document.querySelector('#review-session').style.background = `url(${background.imageLink}) no-repeat`
+                else
+                    document.querySelector('#review-session').style.background = background.imageLink
+            }    
+                break
+            case "other":
+            if(document.querySelector('#other')) {
+                if(background.imageLink[0] != '#')
+                    document.querySelector('#other-session').style.background = `url(${background.imageLink}) no-repeat`
+                else
+                    document.querySelector('#other-session').style.background = background.imageLink
+            }    
+                break
+        }
+    })
 }
 
 function createMain(language, nameGame, name) {
-    console.log(language, nameGame, name)
     const homeSection = document.createElement('div')
     homeSection.id = "home-session"
     homeSection.className = "home"
