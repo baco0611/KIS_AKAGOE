@@ -1,13 +1,16 @@
 import handleExplore from "./explore.js";
 import languageBtn from "./home.js";
+import { defaultReview } from "./loadComment.js";
+import { handleTheChangeOfReview } from "./review.js";
 
 function renderInterface(format) {
     // Xử lý url API ở đây
 
     const backgroundApi = "http://localhost:3000/background"
     const aboutApi = "http://localhost:3000/about"
-    const exploreApi = "http://localhost:3000/explore";
+    const exploreApi = "http://localhost:3000/explore"
     const characterApi = "http://localhost:3000/character"
+    const reviewApi = "http://localhost:3000/comment"
     // const exploreApi = `http://localhost:8081/${format.name}/explore/${format.language}`
     // const characterApi = `http://localhost:8081/${format.name}/character/${format.language}`
 
@@ -35,24 +38,37 @@ function renderInterface(format) {
     .then(data => {
         createMain(format.language, data.nameOfGame)
     })
-
-    fetch(aboutApi)
-    .then(response => response.json())
-    .then(data => {
-        createABout(data.listContent[0])
+    .then(() => {
+        fetch(aboutApi)
+        .then(response => response.json())
+        .then(data => {
+            createABout(data.listContent[0])
+        })
+        .then(() => {
+            fetch(exploreApi)
+            .then((response) => response.json())
+            .then((data) => {
+                createExplore(data.listResult)
+            })
+            .then(() => {
+                fetch(characterApi)
+                .then(response => response.json())
+                .then(data => {
+                    createCharacter(data.listResult[0])
+                })
+                .then(() => {
+                    fetch(reviewApi)
+                    .then(response => response.json())
+                    .then(() => {
+                        createReview(format.name)
+                    })
+                })
+            })
+        })
     })
 
-    fetch(exploreApi)
-    .then((response) => response.json())
-    .then((data) => {
-        createExplore(data.listResult)
-    })
 
-    fetch(characterApi)
-    .then(response => response.json())
-    .then(data => {
-        createCharacter(data.listResult[0])
-    })
+
 
 }
 
@@ -101,7 +117,7 @@ function createMain(language, name) {
             </div>
             <div class="page-back home-back"></div>
     `
-    document.querySelector("body").appendChild(homeSection);
+    document.querySelector("#root").appendChild(homeSection);
     languageBtn()
 }
 
@@ -156,7 +172,7 @@ function createABout(data) {
     aboutSection.appendChild(contentWraper);
     aboutSection.appendChild(pageBack);
 
-    document.querySelector("body").appendChild(aboutSection);
+    document.querySelector("#root").appendChild(aboutSection);
 }
 
 function createExplore(data) {
@@ -259,7 +275,7 @@ function createExplore(data) {
     exploreSection.appendChild(contentWraper);
     exploreSection.appendChild(pageBack);
 
-    document.querySelector("body").appendChild(exploreSection);
+    document.querySelector("#root").appendChild(exploreSection);
     handleExplore();
 }
 
@@ -323,7 +339,107 @@ function createCharacter(data) {
     characterSection.appendChild(pageFront);
     characterSection.appendChild(contentWraper);
 
-    document.querySelector("body").appendChild(characterSection);
+    document.querySelector("#root").appendChild(characterSection);
 
+}
+
+function createReview(name) {
+    const reviewSection = document.createElement('div')
+    reviewSection.id = "review-session"
+    reviewSection.className = 'review'
+
+    reviewSection.innerHTML =
+    `
+    <div class="review-header wraper">
+                <div class="header-blank"></div>
+                <div class="header-content">
+                    <div class="heading">
+                        <h3>What customers say about us</h3>
+                        <h1>REVIEWS</h1>
+                    </div>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="review-content-containt wraper">
+                <div class="review-btn">
+                    <div class="sort-btn">
+                        <p>Sort by:</p>
+                        <select id="review-sort" name="sort">
+                            <option value="/${name}/feedback/TimeDesc">Select</option>
+                            <option value="/${name}/feedback/TimeAsc">Date-Asc</option>
+                            <option value="/${name}/feedback/TimeDesc">Date-Desc</option>
+                            <option value="/${name}/feedback/StarAsc">Star-Asc</option>
+                            <option value="/${name}/feedback/StarDesc">Star-Desc</option>
+                        </select>
+                    </div>
+                    <div class="cmt-btn">
+                        <button>
+                            <i class="ti-plus"></i>
+                            <p>Leave a comment</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="review-main">
+                    <div class="swiper mySwiper">
+                        <div class="main"></div>
+                    </div>
+                    <div class="swiper-button-next next-btn">
+                        <i class="ti-angle-right"></i>
+                    </div>
+                    <div class="swiper-button-prev back-btn">
+                        <i class="ti-angle-left"></i>
+                    </div>
+                    <div class="pagination swiper-pagination"></div>
+                </div>
+                <div class="review-readmore-box"></div>
+                <div class="comment-box">
+                    <div class="comment-container">
+                        <h1>How was your experience?</h1>
+                        <div class="comment-rating">
+                            <input type="radio" name="rate" id="rate-5"><label class="ti-star" for="rate-5"></label>
+                            <input type="radio" name="rate" id="rate-4"><label class="ti-star" for="rate-4"></label>
+                            <input type="radio" name="rate" id="rate-3"><label class="ti-star" for="rate-3"></label>
+                            <input type="radio" name="rate" id="rate-2"><label class="ti-star" for="rate-2"></label>
+                            <input type="radio" name="rate" id="rate-1"><label class="ti-star" for="rate-1"></label>
+                        </div>
+
+                        <form action="#" method="POST" class="form" id="comment-form">
+                            <header></header>
+                            <h1>PLEASE RATE FIRST ^^</h1>
+                            <div class="comment-input">
+                                <div class="form-group">
+                                    <label for="comment-name">Name</label>
+                                    <input id="comment-name" name="fullName" class="name" type="text" placeholder="Your name">
+                                    <span class="form-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment-email">Email</label>
+                                    <input id="comment-email" name="email" class="email" type="text" placeholder="Your email">
+                                    <span class="form-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment-phone">Phone number</label>
+                                    <input id="comment-phone" name="phone" class="phonenumber" type="text" placeholder="Your phone number">
+                                    <span class="form-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment-text">Your comment</label>
+                                    <textarea name="content" id="comment-text" cols="30" placeholder="Text your comment"></textarea>
+                                    <span class="form-message"></span>
+                                </div>
+                            </div>
+                            <button class="submit-button">Submit</button>
+                        </form>
+
+                        <i class="ti-close"></i>
+                    </div>
+                </div>
+            </div>
+    `
+
+    document.querySelector("#root").appendChild(reviewSection);
+    defaultReview()
+    handleTheChangeOfReview()
 }
 export default renderInterface

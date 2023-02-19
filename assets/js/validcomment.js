@@ -1,7 +1,7 @@
 // const $ = document.querySelector.bind(document);
 // const $$ = document.querySelectorAll.bind(document);
 import {createCommentBox} from "./handelCreateComment.js";
-import restartTheForm from "./review.js";
+import {restartTheForm} from "./review.js";
 import postCommentToBe from "./postCommentToBE.js";
 
 // Contructor function
@@ -188,3 +188,5 @@ Validator({
         console.log(data)
     }
 });
+
+export default Validator

@@ -29,11 +29,10 @@ function fetchAPI(API) {
     })
 }
 
-const sortBtn = $('.review-content-containt .sort-btn select')
-// console.log(sortBtn.value)
-// var commentsApi = 'http://localhost:8081/feedback/StarDesc'
-// var commentsApi = 'http://localhost:3000/comment'
-let commentsApi = "http://localhost:8081" + sortBtn.value
-fetchAPI(commentsApi)
+function defaultReview() {
+    const sortBtn = $('.review-content-containt .sort-btn select')
+    let commentsApi = "http://localhost:8081" + sortBtn.value
+    fetchAPI(commentsApi)
+}
 
-export default fetchAPI
+export {fetchAPI, defaultReview}
