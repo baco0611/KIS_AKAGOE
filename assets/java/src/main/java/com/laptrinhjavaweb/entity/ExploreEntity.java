@@ -8,12 +8,22 @@ import javax.persistence.Table;
 @Table(name = "explore")
 public class ExploreEntity extends BaseEntity {
 
-	@Column(name = "contentexplore_ENG")
+	@Column(name = "contentexplore_ENG", length = 500)
 	private String contentExploreENG;
-	@Column(name = "contentexplore_VIE")
+	@Column(name = "contentexplore_VIE", length = 500)
 	private String contentExploreVIE;
-	@Column(name = "contentexplore_JPN")
+	@Column(name = "contentexplore_JPN", length = 500)
 	private String contentExploreJPN;
+	@Column(name = "image_link", length = 500)
+	private String imageLink;
+
+	public String getImageLink() {
+		return imageLink;
+	}
+
+	public void setImageLink(String imageLink) {
+		this.imageLink = imageLink;
+	}
 
 	public String getContentExploreENG() {
 		return contentExploreENG;

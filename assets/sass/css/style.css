@@ -155,6 +155,7 @@ body {
   font-size: 120px;
   padding: 10px;
   font-family: "Noto Serif JP", serif;
+  text-transform: uppercase;
 }
 .home-main h2 {
   text-align: center;
@@ -232,16 +233,17 @@ body {
 }
 .introduce .heading h1 {
   padding-top: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 .introduce ul {
   padding-left: 40px;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 .introduce li {
   width: 700px;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 24px;
+  padding-bottom: 10px;
   line-height: 40px;
   text-align: justify;
   font-family: "Open Sans", sans-serif;
@@ -271,7 +273,7 @@ body {
 }
 .explore .content p {
   font-weight: 400;
-  font-size: 26px;
+  font-size: 24px;
   line-height: 35px;
   text-align: justify;
   letter-spacing: 1px;

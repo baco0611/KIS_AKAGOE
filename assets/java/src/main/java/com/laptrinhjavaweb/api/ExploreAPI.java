@@ -3,6 +3,7 @@ package com.laptrinhjavaweb.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.laptrinhjavaweb.output.ExploreOutput;
@@ -13,22 +14,27 @@ import com.laptrinhjavaweb.service.IExploreService;
 public class ExploreAPI {
 	@Autowired
 	private IExploreService exploreService;
+	
+	@PostMapping(value = "akagoe/explore/pushData")
+	public void Pust_Data (){
+		exploreService.updateExplore();
+	}
 
-	@GetMapping(value = "/explore/ENG")
+	@GetMapping(value = "akagoe/explore/ENG")
 	public ExploreOutput showExplore_ENG() {
 		ExploreOutput result = new ExploreOutput();
 		result.setListResult(exploreService.findAll_ENG());
 		return result;
 	}
 
-	@GetMapping(value = "/explore/VIE")
+	@GetMapping(value = "akagoe/explore/VIE")
 	public ExploreOutput showExplore_VIE() {
 		ExploreOutput result = new ExploreOutput();
-		result.setListResult(exploreService.findAll_ENG());
+		result.setListResult(exploreService.findAll_VIE());
 		return result;
 	}
 
-	@GetMapping(value = "/explore/JPN")
+	@GetMapping(value = "akagoe/explore/JPN")
 	public ExploreOutput showExplore_JPN() {
 		ExploreOutput result = new ExploreOutput();
 		result.setListResult(exploreService.findAll_JPN());

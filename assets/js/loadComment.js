@@ -5,7 +5,7 @@ function fetchAPI(API) {
 
     rvMainContain.innerHTML = ''
 
-    const mainBoxApi = 'http://localhost:8081/mainbox'
+    const mainBoxApi = 'http://localhost:8081/akagoe/mainbox'
 
     fetch(mainBoxApi)
     .then(response => response.json())

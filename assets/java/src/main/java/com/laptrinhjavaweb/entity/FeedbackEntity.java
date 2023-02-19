@@ -23,7 +23,7 @@ public class FeedbackEntity extends BaseEntity {
 	@Column(name = "phone")
 	private String phone;
 	
-	@Column(name = "content")
+	@Column(name = "content",length=1000)
 	private String content;
 
 	@Column(name = "star")

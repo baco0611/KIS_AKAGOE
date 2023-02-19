@@ -1,6 +1,8 @@
 function makeSwiper() {
     const swiperItems = $$('.review-box')
 
+
+    // console.log(window.innerWidth)
     // Make pagination
 
     const wraper = $('.review-content-containt.wraper')
@@ -130,14 +132,14 @@ function makeSwiper() {
         
         for(; i<numberClose; i++)
         {
-            swiperItems[i].classList.add('none')
+            swiperItems[i].style.display = 'none'
         }
 
         // console.log(i)
 
         for(; i < swiperItems.length; i++)
         {
-            swiperItems[i].classList.remove('none')
+            swiperItems[i].removeAttribute('style')
         }
     }
 }  

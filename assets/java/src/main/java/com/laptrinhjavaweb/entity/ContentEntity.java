@@ -10,19 +10,19 @@ public class ContentEntity extends BaseEntity {
 	@Column(name = "titlename_ENG")
 	private String titleNameENG;
 
-	@Column(name = "contentdetails_ENG")
+	@Column(name = "contentdetails_ENG",length=1000)
 	private String contentDetailsENG;
 	
 	@Column(name = "titlename_VIE")
 	private String titleNameVIE;
 
-	@Column(name = "contentdetails_VIE")
+	@Column(name = "contentdetails_VIE",length=1000)
 	private String contentDetailsVIE;
 	
 	@Column(name = "titlename_JPN")
 	private String titleNameJPN;
 
-	@Column(name = "contentdetails_JPN")
+	@Column(name = "contentdetails_JPN",length=1000)
 	private String contentDetailsJPN;
 
 	public String getTitleNameENG() {

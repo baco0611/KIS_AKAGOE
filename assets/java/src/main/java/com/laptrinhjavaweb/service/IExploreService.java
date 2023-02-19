@@ -11,4 +11,5 @@ public interface IExploreService {
 
 	List<ExploreDTO> findAll_JPN();
 
+	void updateExplore();
 }

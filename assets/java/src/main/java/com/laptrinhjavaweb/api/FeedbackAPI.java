@@ -19,12 +19,12 @@ public class FeedbackAPI {
 	@Autowired
 	private IFeedbackService feedbackService;
 
-	@PostMapping(value = "/feedback")
+	@PostMapping(value = "akagoe/feedback")
 	public FeedbackDTO createFeedback(@RequestBody FeedbackInput model) {
 		return feedbackService.save(model);
 	}
 
-	@GetMapping(value = "/mainbox")
+	@GetMapping(value = "akagoe/mainbox")
 	public MainBox mainBox() {
 		MainBox result = new MainBox();
 		result.setNumberFB(feedbackService.feedbackNumber());
@@ -32,28 +32,28 @@ public class FeedbackAPI {
 		return result;
 	}
 
-	@GetMapping(value = "/feedback/TimeAsc")
+	@GetMapping(value = "akagoe/feedback/TimeAsc")
 	public ShowFeedback TimeASC() {
 		ShowFeedback result = new ShowFeedback();
 		result.setListFeedback(feedbackService.findAllOrderByTimeAsc());
 		return result;
 	}
 
-	@GetMapping(value = "/feedback/StarAsc")
+	@GetMapping(value = "akagoe/feedback/StarAsc")
 	public ShowFeedback StarASC() {
 		ShowFeedback result = new ShowFeedback();
 		result.setListFeedback(feedbackService.findAllOrderByStarAsc());
 		return result;
 	}
 
-	@GetMapping(value = "/feedback/StarDesc")
+	@GetMapping(value = "akagoe/feedback/StarDesc")
 	public ShowFeedback StarDESC() {
 		ShowFeedback result = new ShowFeedback();
 		result.setListFeedback(feedbackService.findAllOrderByStarDesc());
 		return result;
 	}
 
-	@GetMapping(value = "/feedback/TimeDesc")
+	@GetMapping(value = "akagoe/feedback/TimeDesc")
 	public ShowFeedback TimeDESC() {
 		ShowFeedback result = new ShowFeedback();
 		result.setListFeedback(feedbackService.findAllOrderByTimeDesc());

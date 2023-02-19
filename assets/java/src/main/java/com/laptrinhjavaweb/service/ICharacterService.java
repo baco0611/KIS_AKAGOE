@@ -10,4 +10,6 @@ public interface ICharacterService {
 	List<CharacterDTO> findAll_VIE();
 
 	List<CharacterDTO> findAll_JPN();
+
+	void updateCharacter();
 }

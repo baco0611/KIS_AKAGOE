@@ -11,4 +11,6 @@ public interface IContentService {
 
 	List<ContentDTO> findAll_JPN();
 
+	void updateIntroduce();
+
 }

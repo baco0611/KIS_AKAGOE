@@ -10,18 +10,21 @@ public class ExploreConverter {
 	public ExploreDTO toDTO_ENG(ExploreEntity entity) {
 		ExploreDTO dto = new ExploreDTO();
 		dto.setContentExplore(entity.getContentExploreENG());
+		dto.setImageLink(entity.getImageLink());
 		return dto;
 	}
 
 	public ExploreDTO toDTO_VIE(ExploreEntity entity) {
 		ExploreDTO dto = new ExploreDTO();
 		dto.setContentExplore(entity.getContentExploreVIE());
+		dto.setImageLink(entity.getImageLink());
 		return dto;
 	}
 
 	public ExploreDTO toDTO_JPN(ExploreEntity entity) {
 		ExploreDTO dto = new ExploreDTO();
 		dto.setContentExplore(entity.getContentExploreJPN());
+		dto.setImageLink(entity.getImageLink());
 		return dto;
 	}
 }
