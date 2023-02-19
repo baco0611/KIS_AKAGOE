@@ -11,6 +11,22 @@ function renderInterface(format) {
     const exploreApi = "http://localhost:3000/explore"
     const characterApi = "http://localhost:3000/character"
     const reviewApi = "http://localhost:3000/comment"
+
+    const loaderDiv = document.createElement('div')
+    loaderDiv.className = 'square-div'
+    const loader = document.createElement('div')
+    loader.className = 'square-wrap'
+    for (var i = 0; i<30; i++)
+    {
+        const loaderElement = document.createElement('div')
+        loaderElement.className = 'square'
+        loader.appendChild(loaderElement)
+    }
+
+    loaderDiv.appendChild(loader)
+    document.querySelector("#root").appendChild(loaderDiv);
+
+
     // const exploreApi = `http://localhost:8081/${format.name}/explore/${format.language}`
     // const characterApi = `http://localhost:8081/${format.name}/character/${format.language}`
 
@@ -36,7 +52,7 @@ function renderInterface(format) {
     fetch(backgroundApi)
     .then(response => response.json())
     .then(data => {
-        createMain(format.language, data.nameOfGame)
+        createMain(format.language, data.nameOfGame, format.name)
     })
     .then(() => {
         fetch(aboutApi)
@@ -62,6 +78,9 @@ function renderInterface(format) {
                     .then(() => {
                         createReview(format.name)
                     })
+                    .then(() => {
+                        document.querySelector("#root").removeChild(loaderDiv);
+                    })
                 })
             })
         })
@@ -70,14 +89,16 @@ function renderInterface(format) {
 
 
 
+
 }
 
-function createMain(language, name) {
+function createMain(language, nameGame, name) {
+    console.log(language, nameGame, name)
     const homeSection = document.createElement('div')
     homeSection.id = "home-session"
     homeSection.className = "home"
 
-    const nameList = name.split(/\r\n/)
+    const nameList = nameGame.split(/\r\n/)
 
     homeSection.innerHTML = 
     `
@@ -89,9 +110,9 @@ function createMain(language, name) {
                             <i class="ti-angle-down"></i>
                         </button>
                         <ul class="drop-menu none">
-                            <li data="ENG"><a href="#">ENG</a></li>
-                            <li data="VIE"><a href="#">VIE</a></li>
-                            <li data="JPN"><a href="#">JPN</a></li>
+                            <li data="ENG"><a href="/${name + '/eng.html'}">ENG</a></li>
+                            <li data="VIE"><a href="/${name + '/vie.html'}">VIE</a></li>
+                            <li data="JPN"><a href="/${name + '/jpn.html'}">JPN</a></li>
                         </ul>
                     </div>
                     <div class="navbar">
