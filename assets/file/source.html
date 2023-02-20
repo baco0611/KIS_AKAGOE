@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="./assets/img/logo/AKAGOE.png">
-        <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
-        <link rel="stylesheet" href="./assets/sass/css/animate.css">
-        <link rel="stylesheet" href="./assets/sass/css/style.css">
+        <link rel="shortcut icon" href="../img/logo/AKAGOE.png">
+        <link rel="stylesheet" href="../font/themify-icons/themify-icons.css">
+        <link rel="stylesheet" href="../sass/css/animate.css">
+        <link rel="stylesheet" href="../sass/css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -20,7 +20,8 @@
     </head>
     <body>
         <!--Home session-->
-        <div id="home-session" class="home">
+        <img src=".././" alt="" srcset="">
+        <div id="home-session" class="home" style="background: url(.././img/akagoe/header/headerBackground.png) center center / cover no-repeat;">
             <div class="contain wraper">
                 <div class="header">
                     <div class="language">
@@ -32,6 +33,26 @@
                             <li data="ENG"><a href="#">ENG</a></li>
                             <li data="VIE"><a href="#">VIE</a></li>
                             <li data="JPN"><a href="#">JPN</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-button">
+                        <label for="menu-mobile-input"  class="menu-btn">
+                            <div>
+                                <i class="ti-menu"></i>
+                            </div>
+                        </label>
+                        <input type="checkbox" hidden class="menu-mobile-check" id="menu-mobile-input">
+                        <label for="menu-mobile-input" class="menu-overlay"></label>
+                        <ul class="menu-mobile">
+                            <label for="menu-mobile-input"><i class="ti-close"></i></label>
+                            <div class="menu-nav">
+                                <li><a href="#home-session">MAIN</a></li>
+                                <li><a href="#introduce-session">INTRODUCE</a></li>
+                                <li><a href="#explore-session">EXPLORE</a></li>
+                                <li><a href="#character-session">CHARACTER</a></li>
+                                <li><a href="#review-session">REVIEW</a></li>
+                                <li><a href="#other-session">OTHER</a></li>
+                            </div>
                         </ul>
                     </div>
                     <div class="navbar">
@@ -59,7 +80,7 @@
         </div>
 
         <!--Introduce session-->
-        <div id="introduce-session" class="introduce">
+        <div id="introduce-session" class="introduce" style="background: url(.././img/akagoe/introduce/introduceBackground.png) center center / cover no-repeat;">
             <div class="page-back page-front"></div>
             <div class="containt wraper">
                 <div class="heading">
@@ -79,7 +100,7 @@
         </div>
 
         <!--Explore session-->
-        <div id="explore-session" class="explore">
+        <div id="explore-session" class="explore" style="background: url(.././img/akagoe/explore/exploreBackground.png) center center / cover no-repeat;">
             <div class="page-back page-front"></div>
             <div class="containt wraper">
                 <div class="content">
@@ -115,13 +136,19 @@
                         <label for="img-2"></label>
                         <label for="img-3"></label>
                     </div>
+
+                    <div class="content-main">
+                        <p id="for-img-1">1 The perspective property is used to give a 3D-positioned element some perspective.</p>
+                        <p id="for-img-2" class="none">2 When defining the perspective property for an element, it is the CHILD elements that get the perspective view, NOT the element itself.</p>
+                        <p id="for-img-3" class="none">3 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, in omnis adipisci beatae asperiores, qui, placeat hic aliquam ratione sapiente nostrum. Accusantium rem impedit atque mollitia distinctio ducimus in laboriosam!</p>
+                    </div>
                 </div>
             </div>
             <div class="page-back"></div>
         </div>
 
         <!--Character session-->
-        <div id="character-session" class="character">
+        <div id="character-session" class="character" style="background: rgb(224, 129, 129);">
             <div class="page-back page-front"></div>
             <div class="containt wraper">
                 <div class="character-content">
@@ -134,14 +161,14 @@
                     </p>
                 </div>
                 <div class="character-img">
-                    <model-viewer src="./assets/img/character/puppet_kid.gltf" camera-controls auto-rotate ar></model-viewer>
+                    <model-viewer src="../img/akagoe/character/puppet_kid.gltf" camera-controls auto-rotate ar></model-viewer>
                     <p>Dùng chuột kéo thả để xem và con lăn để zoom</p>
                 </div>
             </div>
         </div>
         
         <!--Review session-->
-        <div id="review-session" class="review">
+        <div id="review-session" class="review" style="background: url(.././img/akagoe/review/Backgound.png) center center / cover no-repeat;">
             <div class="review-header wraper">
                 <div class="header-blank"></div>
                 <div class="header-content">
@@ -339,7 +366,7 @@
             </div>
         </div>
 
-        <div id="other-session" class="other">
+        <div id="other-session" class="other" style="background: rgb(111, 181, 207);">
             <h1 class="other-header">OTHER</h1>
 
             <div class="containt wraper">

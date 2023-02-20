@@ -5,11 +5,11 @@ import java.util.List;
 import com.laptrinhjavaweb.api.DTO.ContentDTO;
 
 public interface IContentService {
-	List<ContentDTO> findAll_ENG();
+	List<ContentDTO> findByIdName_ENG(String idName);
 
-	List<ContentDTO> findAll_VIE();
+	List<ContentDTO> findByIdName_VIE(String idName);
 
-	List<ContentDTO> findAll_JPN();
+	List<ContentDTO> findByIdName_JPN(String idName);
 
 	void updateIntroduce();
 

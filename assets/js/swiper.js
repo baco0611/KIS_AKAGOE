@@ -1,3 +1,5 @@
+import handleExplore from "./explore.js"
+
 function makeSwiper() {
     const swiperItems = $$('.review-box')
 
@@ -144,6 +146,9 @@ function makeSwiper() {
     }
 }  
 
-window.onresize = makeSwiper
+window.onresize = () => {
+    makeSwiper()
+    handleExplore()
+}
 
 export default makeSwiper

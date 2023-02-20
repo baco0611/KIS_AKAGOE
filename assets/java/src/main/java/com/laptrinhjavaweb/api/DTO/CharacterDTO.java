@@ -4,6 +4,15 @@ public class CharacterDTO {
 	private String description ;
 	private String imageLink;
 	private String imageType;
+	private String idName;
+
+	public String getIdName() {
+		return idName;
+	}
+
+	public void setIdName(String idName) {
+		this.idName = idName;
+	}
 
 	public String getImageLink() {
 		return imageLink;

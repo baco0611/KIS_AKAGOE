@@ -100,6 +100,10 @@
 	transition-duration: 0.2s;
 }
 
+.img-slide .content-main {
+    display: none;
+}
+
 #img-1:checked ~ .dots label[for="img-1"],
 #img-2:checked ~ .dots label[for="img-2"],
 #img-3:checked ~ .dots label[for="img-3"]

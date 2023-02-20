@@ -12,6 +12,7 @@ public class ContentConverter {
 		ContentDTO dto = new ContentDTO();
 		dto.setContentDetails(entity.getContentDetailsENG());
 		dto.setTitle(entity.getTitleNameENG());
+		dto.setIdName(entity.getIdName());
 		return dto;
 	}
 
@@ -19,6 +20,7 @@ public class ContentConverter {
 		ContentDTO dto = new ContentDTO();
 		dto.setContentDetails(entity.getContentDetailsVIE());
 		dto.setTitle(entity.getTitleNameVIE());
+		dto.setIdName(entity.getIdName());
 		return dto;
 	}
 
@@ -26,6 +28,7 @@ public class ContentConverter {
 		ContentDTO dto = new ContentDTO();
 		dto.setContentDetails(entity.getContentDetailsJPN());
 		dto.setTitle(entity.getTitleNameJPN());
+		dto.setIdName(entity.getIdName());
 		return dto;
 	}
 }

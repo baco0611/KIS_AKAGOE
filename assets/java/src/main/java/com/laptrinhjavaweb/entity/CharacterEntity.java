@@ -17,6 +17,17 @@ public class CharacterEntity extends BaseEntity {
 	private String imageLink;
 	@Column(name = "image_type")
 	private String imageType;
+	@Column(name = "idName")
+	private String idName;
+
+
+	public String getIdName() {
+		return idName;
+	}
+
+	public void setIdName(String idName) {
+		this.idName = idName;
+	}
 
 	public String getImageType() {
 		return imageType;

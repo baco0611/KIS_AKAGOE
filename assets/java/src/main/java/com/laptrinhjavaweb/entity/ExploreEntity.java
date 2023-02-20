@@ -16,6 +16,17 @@ public class ExploreEntity extends BaseEntity {
 	private String contentExploreJPN;
 	@Column(name = "image_link", length = 500)
 	private String imageLink;
+	@Column(name = "idName")
+	private String idName;
+
+
+	public String getIdName() {
+		return idName;
+	}
+
+	public void setIdName(String idName) {
+		this.idName = idName;
+	}
 
 	public String getImageLink() {
 		return imageLink;

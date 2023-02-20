@@ -1,0 +1,201 @@
+/* Tablet & Mobile */
+.menu{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    &-button {
+        position: fixed;
+        z-index: 10;
+        right: 80px;
+    }
+    &-btn{
+        display: none;
+        @include size(35px);
+        margin-right: -10px;
+        & div{
+            width: 100%;
+            height: 100%;
+            & i{
+                margin: 0 auto;
+                line-height: 100%;
+                color: rgba(0, 0, 0, 0.4);
+                font-size: 35px;
+            }
+        }
+    }
+    &-overlay{
+        display: none;
+        position: fixed;
+        z-index: 10;
+        top: 0; right: 0; left: 0; bottom: 0; 
+        background-color: rgba(0, 0, 0, 0.3);
+        animation: fadeIn linear 0.3s;
+    }
+    &-mobile{
+        transform: translateX(100%);
+        position: fixed;
+        z-index: 10;
+        top: 0; bottom: 0; right: 0;
+        width: 300px;
+        max-width: 100%;
+        background-color: rgba(0, 0, 0, 0.337);
+        list-style: none;
+        opacity: 0;
+        transition: all linear 0.3s;
+        &-check:checked ~ .menu-overlay{
+            display: block;
+        }
+        &-check:checked ~ .menu-mobile{
+            transform: translateX(0);
+            opacity: 1;
+        }
+        & label {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 15px;
+            right: 15px;
+            & i {
+                display: block;
+                width: 100%;
+                height: 100%;
+                line-height: 30px;
+                text-align: center;
+                font-size: 28px;
+            }
+        }
+    }
+    &-nav {
+        width: 100%;
+        padding: 30px;
+
+        & li {
+            padding: 15px 0;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        & a {
+            display: block;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            font-size: 25px;
+            font-weight: 800;
+            color: white;
+        }
+    }
+}
+
+@media only screen and (max-width : 64em) {
+    #home-session {
+        & .navbar {
+            display: none;
+        }  
+
+        & .menu-btn {
+            display: block;
+        }
+    }
+
+    #footer-session {
+        height: 100px;
+
+        & .footer-nav {
+            display: none;
+        } 
+
+        & .containt {
+            padding-top: 40px;
+        }
+    }
+    
+    #introduce-session {
+        & li {
+            width: 100%;
+        }
+
+        & h3, h1 {
+            text-align: center;
+        }
+    }
+
+    #explore-session {
+        & .wraper {
+            display: block;
+        }
+
+        & .heading h1 {
+            text-align: center;
+        }
+
+        & .content .content-main {
+            display: none;
+        }
+
+        & .img-slide 
+        {
+            width: 100%;
+            min-height: 700px;
+            & .content-main {
+                display: block;
+                padding-top: 40px;
+
+                & p {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 22px;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    #character-session {
+        & .wraper {
+            display: block
+        }
+
+        & .character-content, .character-img {
+            width: 100%;
+        }
+    }
+
+    #review-session {
+        & .header {
+            &-blank {
+                display: none;
+            }
+
+            &-content {
+                width: 100%;
+
+                & .line {
+                    width: 100%;
+                }
+
+                & h3, h1 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    #other-session {
+        & h2 {
+            text-align: center;
+            text-transform: uppercase;
+        }
+        & .other-main {
+            flex-direction: column;
+            gap: 20px;
+            padding-bottom: 100px;
+        }
+    }
+
+    
+}

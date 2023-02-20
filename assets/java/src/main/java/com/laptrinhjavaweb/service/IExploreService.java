@@ -5,11 +5,11 @@ import java.util.List;
 import com.laptrinhjavaweb.api.DTO.ExploreDTO;
 
 public interface IExploreService {
-	List<ExploreDTO> findAll_ENG();
+	List<ExploreDTO> findByIdName_ENG(String idName);
 
-	List<ExploreDTO> findAll_VIE();
+	List<ExploreDTO> findByIdName_VIE(String idName);
 
-	List<ExploreDTO> findAll_JPN();
+	List<ExploreDTO> findByIdName_JPN(String idName);
 
 	void updateExplore();
 }

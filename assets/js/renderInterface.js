@@ -6,12 +6,12 @@
     function renderInterface(format) {
     // Xử lý url API ở đây
 
-    const backgroundApi = "http://localhost:3000/background";
-    const aboutApi = "http://localhost:3000/about";
-    const exploreApi = "http://localhost:3000/explore";
-    const characterApi = "http://localhost:3000/character";
-    const reviewApi = "http://localhost:3000/comment";
-    const otherApi = "http://localhost:3000/other";
+    // const backgroundApi = "http://localhost:3000/background";
+    // const aboutApi = "http://localhost:3000/about";
+    // const exploreApi = "http://localhost:3000/explore";
+    // const characterApi = "http://localhost:3000/character";
+    // const reviewApi = "http://localhost:3000/comment";
+    // const otherApi = "http://localhost:3000/other";
 
     const loaderDiv = document.createElement("div");
     loaderDiv.className = "square-div";
@@ -26,11 +26,14 @@
     loaderDiv.appendChild(loader);
     document.querySelector("#root").appendChild(loaderDiv);
 
-    // const exploreApi = `http://localhost:8081/${format.name}/explore/${format.language}`
-    // const characterApi = `http://localhost:8081/${format.name}/character/${format.language}`
-    // http://localhost:8081/character/eng/...
-    // const exploreApipush = `http://localhost:8081/${format.name}/explore/pushData`
-    // const characterApipush = `http://localhost:8081/${format.name}/about/pushData`
+    const backgroundApi = `http://localhost:8081/${format.name}/background`
+    const exploreApi = `http://localhost:8081/explore/${format.language}/${format.name}`
+    const characterApi = `http://localhost:8081/character/${format.language}/${format.name}`
+    const aboutApi = `http://localhost:8081/about/${format.language}/${format.name}`
+    const reviewApi = `http://localhost:8081/about/${format.language}/${format.name}`
+    const otherApi = "http://localhost:8081/other"
+    
+
 
     // fetch(exploreApipush, {
     //     method: 'POST',
@@ -192,6 +195,26 @@ function createMain(language, nameGame, name, download) {
                                 <li data="JPN"><a href="/${name + "/jpn.html"}">JPN</a></li>
                             </ul>
                         </div>
+                        <div class="menu-button">
+                            <label for="menu-mobile-input"  class="menu-btn">
+                                <div>
+                                    <i class="ti-menu"></i>
+                                </div>
+                            </label>
+                            <input type="checkbox" hidden class="menu-mobile-check" id="menu-mobile-input">
+                            <label for="menu-mobile-input" class="menu-overlay"></label>
+                            <ul class="menu-mobile">
+                                <label for="menu-mobile-input"><i class="ti-close"></i></label>
+                                <div class="menu-nav">
+                                    <li><a href="#home-session">MAIN</a></li>
+                                    <li><a href="#introduce-session">INTRODUCE</a></li>
+                                    <li><a href="#explore-session">EXPLORE</a></li>
+                                    <li><a href="#character-session">CHARACTER</a></li>
+                                    <li><a href="#review-session">REVIEW</a></li>
+                                    <li><a href="#other-session">OTHER</a></li>
+                                </div>
+                            </ul>
+                        </div>
                         <div class="navbar">
                             <ul>
                                 <li><a href="#home-session">MAIN</a></li>
@@ -199,7 +222,7 @@ function createMain(language, nameGame, name, download) {
                                 <li><a href="#explore-session">EXPLORE</a></li>
                                 <li><a href="#character-session">CHARACTER</a></li>
                                 <li><a href="#review-session">REVIEW</a></li>
-                                <li><a href="#other">OTHER</a></li>
+                                <li><a href="#other-session">OTHER</a></li>
                             </ul>
                         </div>
                     </div>
@@ -238,8 +261,14 @@ function createABout(data) {
     heading.className = "heading";
     const h3 = document.createElement("h3");
     const h1 = document.createElement("h1");
-    h3.innerText = titles[0];
-    h1.innerText = titles[1];
+    if(titles.length > 1)
+    {
+        h3.innerText = titles[0];
+        h1.innerText = titles[1];
+    } else
+    {
+        h1.innerText = titles[0]
+    }
     heading.appendChild(h3);
     heading.appendChild(h1);
 
@@ -357,6 +386,20 @@ function createExplore(data) {
         dots.appendChild(imgLabel);
     }
     imgSlide.appendChild(dots);
+
+    //I.3. Main
+    const contentMain2 = document.createElement("div");
+    contentMain2.className = "content-main";
+    for (var i = 1; i <= data.length; i++) {
+        const contentMainP = document.createElement("p");
+        contentMainP.id = "for-img-" + i;
+        if (i != 1) {
+        contentMainP.className = "none";
+        }
+        contentMainP.innerHTML = data[i - 1].contentExplore;
+        contentMain2.appendChild(contentMainP);
+    }
+    imgSlide.appendChild(contentMain2);
 
     //III. Create Section
 

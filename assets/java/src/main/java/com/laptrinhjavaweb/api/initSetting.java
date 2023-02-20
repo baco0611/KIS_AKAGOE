@@ -39,21 +39,25 @@ public class initSetting implements InitializingBean {
 	private IOtherService otherService;
 
 	@Override
-	public void afterPropertiesSet() throws Exception {
-		if (characterRepository.findAll() == null) {
-			characterService.updateCharacter();
-		}
-		if (exploreRepository.findAll() == null) {
-			exploreService.updateExplore();
-		}
-		if (contentRepository.findAll() == null) {
-			contentService.updateIntroduce();
-		}
-		if (backgroundRepository.findAll() == null) {
-			backgroundService.updateBackground();
-		}
-		if (otherRepository.findAll() == null) {
-			otherService.updateOther();
+	public void afterPropertiesSet()  {
+		try {
+			if (characterRepository.findAll() == null) {
+				characterService.updateCharacter();
+			}
+			if (exploreRepository.findAll() == null) {
+				exploreService.updateExplore();
+			}
+			if (contentRepository.findAll() == null) {
+				contentService.updateIntroduce();
+			}
+			if (backgroundRepository.findAll() == null) {
+				backgroundService.updateBackground();
+			}
+			if (otherRepository.findAll() == null) {
+				otherService.updateOther();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 	}
 

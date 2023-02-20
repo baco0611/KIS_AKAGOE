@@ -12,6 +12,7 @@ public class CharacterConverter {
 		dto.setDescription(entity.getDescriptionENG());
 		dto.setImageLink(entity.getImageLink());
 		dto.setImageType(entity.getImageType());
+		dto.setIdName(entity.getIdName());
 		return dto;
 	}
 
@@ -20,6 +21,7 @@ public class CharacterConverter {
 		dto.setDescription(entity.getDescriptionVIE());
 		dto.setImageLink(entity.getImageLink());
 		dto.setImageType(entity.getImageType());
+		dto.setIdName(entity.getIdName());
 		return dto;
 	}
 
@@ -28,6 +30,7 @@ public class CharacterConverter {
 		dto.setDescription(entity.getDescriptionJPN());
 		dto.setImageLink(entity.getImageLink());
 		dto.setImageType(entity.getImageType());
+		dto.setIdName(entity.getIdName());
 		return dto;
 	}
 }
