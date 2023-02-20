@@ -1,0 +1,31 @@
+#footer-session {
+    width: 100%;
+    height: 250px;
+    background-color: #002845;
+}
+
+.footer {
+    & .containt {
+        height: 100px;
+        padding-top: 60px;
+
+        & p {
+            width: 100%;
+            text-align: right;
+        }
+    }
+    &-nav {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items:first baseline;
+        justify-content: space-between;
+        & a {
+            color: white !important;
+            text-shadow: none !important; 
+        }
+         & button {
+            color: white !important;
+        }
+    }
+}

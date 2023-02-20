@@ -64,7 +64,7 @@ public class CharacterService implements ICharacterService {
 		String descriptionENG = "The characters are drawn based on the images of characters from 'Pencil Boy Shin' with yellow hats and familiar school uniforms.\r\n"
 				+ "They are drawn simply and easily to assist children in remembering characters and applying what is played in real life.\r\n"
 				+ "Let this character be a companion to your baby in the process of learning new skills.";
-		String imageLink = "./assets/img/character/puppet_kid.gltf";
+		String imageLink = "../assets/img/akagoe/character/puppet_kid.gltf";
 		String imageType = "3D";
 		entity.setDescriptionENG(descriptionENG);
 		entity.setDescriptionJPN(descriptionJPN);

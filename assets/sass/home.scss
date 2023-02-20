@@ -138,3 +138,31 @@
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     }
 }
+
+
+#download-game {
+    position: fixed;
+    z-index: 5;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    color: white;
+    font-size: 22px;
+    bottom: 30px;
+    left: 30px;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    & i {
+        line-height: 50px;
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    }
+}

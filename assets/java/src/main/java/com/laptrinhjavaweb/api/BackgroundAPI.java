@@ -17,9 +17,8 @@ public class BackgroundAPI {
 	@GetMapping(value = "akagoe/background")
 	public BackgroundOutput showLink() {
 		BackgroundOutput result = new BackgroundOutput();
-		backgroundService.updateBackground();
 		result.setBackground(backgroundService.findAll());
-		result.setNameOfGame("Akagoe");
+		result.setNameOfGame("赤声\r\nChildren's Voices");
 		result.setUrlDownLoad("./assets/file/setup.exe\r\n");
 		return result;
 	}

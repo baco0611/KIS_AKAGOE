@@ -55,7 +55,7 @@ public class ContentService implements IContentService {
 	@Override
 	public void updateIntroduce() {
 		ContentEntity entity= new ContentEntity();
-		String titleNameENG="What is 'Children's Voices'";
+		String titleNameENG="What is\r\n" + "'Children's Voices'";
 		String titleNameVIE="赤声là gì\r\n" + "“Tiếng lòng của trẻ em”" ;
 		String titleNameJPN="赤声は何ですか？\r\n" + "赤ちゃんの声";
 		String contentDetailsJPN="赤声は6歳以上の子供向けの教育ゲームです。この時期は子供が新しい知識を学び始める時期ですから、簡単な規律を教えると長く覚えられます。\r\n" + 

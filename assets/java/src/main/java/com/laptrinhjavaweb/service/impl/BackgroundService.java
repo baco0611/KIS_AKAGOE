@@ -34,19 +34,19 @@ public class BackgroundService implements IBackgroundService {
 	public void updateBackground() {
 		BackgroundEntity entity1 = new BackgroundEntity();
 		entity1.setPageName("main");
-		entity1.setImagelink("./assets/img/header/headerBackground.png");
+		entity1.setImagelink("../assets/img/akagoe/header/headerBackground.png");
 		BackgroundEntity entity2 = new BackgroundEntity();
 		entity2.setPageName("introduce");
-		entity2.setImagelink("./assets/img/introduce/introduceBackground.png");
+		entity2.setImagelink("../assets/img/akagoe/introduce/introduceBackground.png");
 		BackgroundEntity entity3 = new BackgroundEntity();
 		entity3.setPageName("explore");
-		entity3.setImagelink("./assets/img/explore/exploreBackground.png");
+		entity3.setImagelink("../assets/img/akagoe/explore/exploreBackground.png");
 		BackgroundEntity entity4 = new BackgroundEntity();
 		entity4.setPageName("character");
 		entity4.setImagelink("#E08181");
 		BackgroundEntity entity5 = new BackgroundEntity();
 		entity5.setPageName("review");
-		entity5.setImagelink("./assets/img/review/Backgound.png");
+		entity5.setImagelink("../assets/img/akagoe/review/Backgound.png");
 		BackgroundEntity entity6 = new BackgroundEntity();
 		entity6.setPageName("other");
 		entity6.setImagelink("#6FB5CF");

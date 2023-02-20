@@ -3,7 +3,6 @@ package com.laptrinhjavaweb.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.laptrinhjavaweb.output.AboutOutput;
@@ -14,11 +13,6 @@ import com.laptrinhjavaweb.service.IContentService;
 public class AboutAPI {
 	@Autowired
 	private IContentService contentService;
-	
-	@PostMapping(value = "akagoe/about/pushData")
-	public void Pust_Data (){
-		contentService.updateIntroduce();
-	}
 
 	@GetMapping(value = "akagoe/about/ENG")
 	public AboutOutput showAbout_ENG() {

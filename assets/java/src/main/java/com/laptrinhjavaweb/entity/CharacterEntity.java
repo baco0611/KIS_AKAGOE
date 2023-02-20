@@ -7,7 +7,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "NhanVat")
 public class CharacterEntity extends BaseEntity {
-
 	@Column(name = "description_ENG", length = 600)
 	private String descriptionENG;
 	@Column(name = "description_VIE", length = 600)
