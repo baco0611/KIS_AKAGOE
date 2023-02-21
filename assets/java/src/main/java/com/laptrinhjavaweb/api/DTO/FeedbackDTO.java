@@ -9,6 +9,15 @@ public class FeedbackDTO {
 	private String content;
 	private int star;
 	private String time;
+	private String idName;
+
+	public String getIdName() {
+		return idName;
+	}
+
+	public void setIdName(String idName) {
+		this.idName = idName;
+	}
 
 	public String getFullName() {
 		return fullName;

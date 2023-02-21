@@ -6,6 +6,15 @@ public class FeedbackInput {
 	private String email;
 	private String fullName;
 	private String phone;
+	private String idName;
+
+	public String getIdName() {
+		return idName;
+	}
+
+	public void setIdName(String idName) {
+		this.idName = idName;
+	}
 
 	public String getFullName() {
 		return fullName;

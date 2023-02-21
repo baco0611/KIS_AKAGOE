@@ -7,10 +7,10 @@ import com.laptrinhjavaweb.api.DTO.FeedbackInput;
 
 public interface IFeedbackService {
 	FeedbackDTO save(FeedbackInput feedbackinput);
-	List<FeedbackDTO> findAllOrderByTimeAsc();
-	List<FeedbackDTO> findAllOrderByStarAsc();
-	List<FeedbackDTO> findAllOrderByTimeDesc();
-	List<FeedbackDTO> findAllOrderByStarDesc();
-	Long feedbackNumber();
-	Long StarNumber();
+	List<FeedbackDTO> findAllOrderByTimeAsc(String idName);
+	List<FeedbackDTO> findAllOrderByStarAsc(String idName);
+	List<FeedbackDTO> findAllOrderByTimeDesc(String idName);
+	List<FeedbackDTO> findAllOrderByStarDesc(String idName);
+	long feedbackNumber(String idName);
+	long StarNumber(String idName);
 }

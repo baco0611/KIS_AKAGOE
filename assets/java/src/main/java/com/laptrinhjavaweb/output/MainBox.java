@@ -1,22 +1,22 @@
 package com.laptrinhjavaweb.output;
 
 public class MainBox {
-	private Long numberFB;
-	private Long avgStar;
+	private long numberFB;
+	private long avgStar;
 
-	public Long getNumberFB() {
+	public long getNumberFB() {
 		return numberFB;
 	}
 
-	public void setNumberFB(Long numberFB) {
+	public void setNumberFB(long numberFB) {
 		this.numberFB = numberFB;
 	}
 
-	public Long getAvgStar() {
+	public long getAvgStar() {
 		return avgStar;
 	}
 
-	public void setAvgStar(Long avgStar) {
+	public void setAvgStar(long avgStar) {
 		this.avgStar = avgStar;
 	}
 }

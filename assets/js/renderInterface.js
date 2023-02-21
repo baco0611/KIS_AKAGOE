@@ -2,6 +2,7 @@
     import languageBtn from "./home.js";
     import { defaultReview } from "./loadComment.js";
     import { handleTheChangeOfReview } from "./review.js";
+    import Validator from "./validcomment.js";
 
     function renderInterface(format) {
     // Xử lý url API ở đây
@@ -26,7 +27,7 @@
     loaderDiv.appendChild(loader);
     document.querySelector("#root").appendChild(loaderDiv);
 
-    const backgroundApi = `http://localhost:8081/${format.name}/background`
+    const backgroundApi = `http://localhost:8081/background/${format.name}`
     const exploreApi = `http://localhost:8081/explore/${format.language}/${format.name}`
     const characterApi = `http://localhost:8081/character/${format.language}/${format.name}`
     const aboutApi = `http://localhost:8081/about/${format.language}/${format.name}`
@@ -83,7 +84,7 @@
                     fetch(reviewApi)
                         .then((response) => response.json())
                         .then(() => {
-                        createReview(format.name);
+                            createReview(format.name);
                         })
                         .then(() => {
                         fetch(otherApi)
@@ -464,8 +465,8 @@ function createCharacter(data) {
         characterImg.appendChild(modelViewer);
         characterImg.appendChild(pImg);
     } else {
-        const image = document.createElement("img");
-        image.style.backgroundImage = `url(${data.imageLink})`;
+        const image = document.createElement("div");
+        image.style.background = `url(${data.imageLink}) center/cover`;
 
         characterImg.appendChild(image);
     }
@@ -513,11 +514,11 @@ function createReview(name) {
                         <div class="sort-btn">
                             <p>Sort by:</p>
                             <select id="review-sort" name="sort">
-                                <option value="/${name}/feedback/TimeDesc">Select</option>
-                                <option value="/${name}/feedback/TimeAsc">Date-Asc</option>
-                                <option value="/${name}/feedback/TimeDesc">Date-Desc</option>
-                                <option value="/${name}/feedback/StarAsc">Star-Asc</option>
-                                <option value="/${name}/feedback/StarDesc">Star-Desc</option>
+                                <option value="/feedback/TimeDesc/${name}">Select</option>
+                                <option value="/feedback/TimeAsc/${name}">Date-Asc</option>
+                                <option value="/feedback/TimeDesc/${name}">Date-Desc</option>
+                                <option value="/feedback/StarAsc/${name}">Star-Asc</option>
+                                <option value="/feedback/StarDesc/${name}">Star-Desc</option>
                             </select>
                         </div>
                         <div class="cmt-btn">
@@ -586,8 +587,26 @@ function createReview(name) {
         `;
 
     document.querySelector("#root").appendChild(reviewSection);
-    defaultReview();
-    handleTheChangeOfReview();
+    defaultReview(name);
+    handleTheChangeOfReview(name);
+    Validator({
+        name,
+        form: '#comment-form',
+        formGroupSelector: '.form-group',
+        errorSelector: '.form-message',
+        rules: [
+            Validator.isRequired('#comment-name', 'Please fill your full name'),
+            Validator.isRequired('#comment-email', 'Please fill your email'),
+            Validator.isEmail('#comment-email', 'Please fill correct email'),
+            Validator.isRequired('#comment-phone'),
+            Validator.minLength('#comment-phone', 10, "Please fill the correct phone number"),
+            Validator.isPhoneNumber('#comment-phone', "Sai tề"),
+            Validator.isRequired('#comment-text'),
+        ],
+        onSubmit(data) {
+            console.log(data)
+        }
+    });
 }
 
 function createOtherAndFeedback(data, name, language) {

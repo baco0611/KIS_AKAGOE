@@ -17,6 +17,7 @@ public class FeedbackConverter {
 		entity.setFullName(input.getFullName());
 		entity.setEmail(input.getEmail());
 		entity.setPhone(input.getPhone());
+		entity.setIdName(input.getIdName());
 		return entity;
 	}
 
@@ -26,6 +27,8 @@ public class FeedbackConverter {
 		dto.setStar(entity.getStar());
 		dto.setTime(entity.getTime());
 		dto.setFullName(entity.getFullName());
+		dto.setIdName(entity.getIdName());
+		dto.setIdName(entity.getIdName());
 		return dto;
 	}
 

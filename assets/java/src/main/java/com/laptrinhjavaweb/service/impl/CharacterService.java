@@ -75,11 +75,17 @@ public class CharacterService implements ICharacterService {
 		characterRepository.save(entity1);
 		
 		CharacterEntity entity2 = new CharacterEntity();
-		String descriptionJPN_vot = "vot";
-		String descriptionVIE_vot = "vot1";
-		String descriptionENG_vot = "vot2";
+		String descriptionJPN_vot = "緑の忍者カエリ\r\n" + 
+				"ピクセルでかく。\r\n" + 
+				"面白いな身振り手振り";
+		String descriptionVIE_vot = "Là một chú ếch ninja xanh lá \r\n" + 
+				"Được vẽ 2d pixel \r\n" + 
+				"Với một gương mặt, hành động vui nhộn\r\n";
+		String descriptionENG_vot = "A green ninja frog\r\n" + 
+				"Pixels drawn in two dimensions\r\n" + 
+				"With a funny face, action";
 		String imageLink_vot = "../assets/img/akagoe/character/puppet_kid.gltf";
-		String imageType_vot = "3D";
+		String imageType_vot = "2D";
 		entity2.setDescriptionENG(descriptionENG_vot);
 		entity2.setDescriptionJPN(descriptionJPN_vot);
 		entity2.setDescriptionVIE(descriptionVIE_vot);
@@ -89,9 +95,15 @@ public class CharacterService implements ICharacterService {
 		characterRepository.save(entity2);
 		
 		CharacterEntity entity3 = new CharacterEntity();
-		String descriptionJPN_revivedknight = "knight";
-		String descriptionVIE_revivedknight = "knight1";
-		String descriptionENG_revivedknight = "knight2";
+		String descriptionJPN_revivedknight = "キャラクターはホロウナイトという有名なゲームにインスパイアされています。\r\n" + 
+				"シンプルな外見でキャラクターは、歩く、走る、跳ぶ、よじ登る、斬る、そして撃つなど、さまざまなアクションができます。\r\n" + 
+				"反応のスピードが早いで、様々な地形で活躍できます。\r\n";
+		String descriptionVIE_revivedknight = "Nhật vật được lấy cảm hứng từ tựa game nổi tiếng là Hollow Knight. \r\n" + 
+				"Với ngoại hình đơn giản nên nhân vật có thể thực hiện nhiều hành động khác nhau như: đi bộ, chạy, nhảy, trèo, chém, bắn, …\r\n" + 
+				"Với độ phản hồi di chuyển tốt nhân vật này có thể hoạt động trong nhiều địa hình khác nhau.\r\n";
+		String descriptionENG_revivedknight = "The character is inspired by the famous video game Hollow Knight.\r\n" + 
+				"With a simple appearance, the character can perform many different actions such as walking, running, jumping, climbing, slashing, shooting, etc.\r\n" + 
+				"With good movement response, this character can operate in many different terrains.\r\n";
 		String imageLink_revivedknight = "../assets/img/akagoe/character/puppet_kid.gltf";
 		String imageType_revivedknight = "3D";
 		entity3.setDescriptionENG(descriptionENG_revivedknight);
@@ -104,10 +116,14 @@ public class CharacterService implements ICharacterService {
 		
 		CharacterEntity entity4 = new CharacterEntity();
 		String descriptionJPN_soulhalo = "halo";
-		String descriptionVIE_soulhalo = "halo1";
-		String descriptionENG_soulhalo = "halo2";
-		String imageLink_soulhalo = "../assets/img/akagoe/character/puppet_kid.gltf";
-		String imageType_soulhalo = "3D";
+		String descriptionVIE_soulhalo = "Nhân vật được nhóm chọn lựa và xem xét từ nhiều khía cạnh khác nhau\r\n" + 
+				"Với ngoại hình trẻ trung năng động và có phần phiêu lưu sẽ tạo cho người chơi cảm giác đang hòa mình vào chính hành trình của nhân vật\r\n" + 
+				"Riley sẽ là người đồng hành, thấu hiểu và chia sẽ với bạn trong quá trình dậy thì và phát triển cảm xúc thông qua chính câu chuyện của cô ấy.";
+		String descriptionENG_soulhalo = "Characters are selected and considered by the team from many different perspectives.\r\n" + 
+				"With a youthful, dynamic, and adventurous appearance, it will give players the feeling of being immersed in the character's journey.\r\n" + 
+				"Riley will be your companion, understanding and sharing her own experience with puberty and emotional development.";
+		String imageLink_soulhalo = "../assets/img/soulhalo/character/characterMain.png";
+		String imageType_soulhalo = "2D";
 		entity4.setDescriptionENG(descriptionENG_soulhalo);
 		entity4.setDescriptionJPN(descriptionJPN_soulhalo);
 		entity4.setDescriptionVIE(descriptionVIE_soulhalo);

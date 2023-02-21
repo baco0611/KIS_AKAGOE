@@ -32,6 +32,17 @@ public class FeedbackEntity extends BaseEntity {
 	@Column(name = "time")
 	@CreationTimestamp
 	private Date time;
+	
+	@Column(name = "idName")
+	private String idName;
+
+	public String getIdName() {
+		return idName;
+	}
+
+	public void setIdName(String idName) {
+		this.idName = idName;
+	}
 
 	public String getFullName() {
 		return fullName;

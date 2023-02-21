@@ -54,6 +54,7 @@ body {
   background: url(../../img/back_blur/back_blur.png) no-repeat;
   background-size: cover;
   height: 100px;
+  background-position-y: 30px;
 }
 
 .heading h1 {
@@ -156,6 +157,7 @@ body {
   padding: 10px;
   font-family: "Noto Serif JP", serif;
   text-transform: uppercase;
+  min-height: 120px;
 }
 .home-main h2 {
   text-align: center;
@@ -163,6 +165,7 @@ body {
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 5px;
+  min-height: 30px;
 }
 .home-main button {
   margin-top: 60px;
@@ -446,6 +449,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.character-img div {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 .character-img model-viewer {
   width: 100%;
@@ -1047,7 +1055,7 @@ body {
   padding-bottom: 250px;
 }
 .other-div {
-  width: 400px;
+  width: 25vw;
   height: 310px;
   background-color: white;
   border-bottom-right-radius: 15px;
@@ -1250,6 +1258,7 @@ body {
   background: url(../../img/back_blur/back_blur.png) no-repeat;
   background-size: cover;
   height: 100px;
+  background-position-y: 30px;
 }
 
 .heading h1 {
@@ -1519,6 +1528,9 @@ body {
     flex-direction: column;
     gap: 20px;
     padding-bottom: 100px;
+  }
+  #other-session .other-div {
+    width: 60vw;
   }
 }
 

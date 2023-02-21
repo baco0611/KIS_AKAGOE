@@ -3,6 +3,7 @@ package com.laptrinhjavaweb.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.laptrinhjavaweb.output.BackgroundOutput;
@@ -14,12 +15,26 @@ public class BackgroundAPI {
 	@Autowired
 	private IBackgroundService backgroundService;
 
-	@GetMapping(value = "akagoe/background")
-	public BackgroundOutput showLink() {
+	@GetMapping(value = "background/{idName}")
+	public BackgroundOutput showLink(@PathVariable("idName") String idName) {
 		BackgroundOutput result = new BackgroundOutput();
-		result.setBackground(backgroundService.findAll());
-		result.setNameOfGame("赤声\r\nChildren's Voices");
-		result.setUrlDownLoad("./assets/file/setup.exe\r\n");
+		result.setBackground(backgroundService.findByIdName(idName));
+		if (idName.equals("akagoe")) {
+			result.setNameOfGame("赤声\r\nChildren's Voices");
+			result.setUrlDownLoad("./assets/file/setup.exe\r\n");
+		}
+		if (idName.equals("vot")) {
+			result.setNameOfGame("VỌT\r\nFunny Game");
+			result.setUrlDownLoad("./assets/file/setup.exe\r\n");
+		}
+		if (idName.equals("soulhalo")) {
+			result.setNameOfGame("SOUL HALO");
+			result.setUrlDownLoad("./assets/file/setup.exe\r\n");
+		}
+		if (idName.equals("revivedknight")) {
+			result.setNameOfGame(" \r\n ");
+			result.setUrlDownLoad("./assets/file/setup.exe\r\n");
+		}
 		return result;
 	}
 }

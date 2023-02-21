@@ -1,5 +1,5 @@
-function postCommentToBe(formValues) {
-    var commentsApi = 'http://localhost:8081/akagoe/feedback'
+function postCommentToBe(formValues, name) {
+    var commentsApi = 'http://localhost:8081/feedback'
     // var commentsApi = 'http://localhost:3000/comment'
     console.log(formValues)
     fetch(commentsApi, {

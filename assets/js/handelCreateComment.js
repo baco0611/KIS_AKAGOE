@@ -206,4 +206,53 @@ function createMainBox(data) {
 
 }
 
-export {createCommentBox, createMainBox}
+function createMainBoxFail(data) {
+    const header = document.createElement('h4')
+        header.innerHTML = 'Excellent'
+
+        // Create box star
+        const mainBoxStar = document.createElement("div")
+        const text = 
+        `<div class="box-star">
+            <div class="main-back">
+                <i class="ti-star"></i>
+            </div>
+        </div>`
+
+        var boxInnerHTML = ''
+
+        for (var i = 0; i < 5; i++)
+        {
+            boxInnerHTML += text
+        }
+
+        mainBoxStar.innerHTML = boxInnerHTML
+        mainBoxStar.classList.add('main-box-star')
+
+        // Create description
+        const description = document.createElement('h3')
+        description.innerHTML = `Based on <span class="number bold">0</span> <span class="bold">reviews</span>`
+
+        // Create line
+        const line = document.createElement('div')
+        line.classList.add('line')
+
+        // Create footer of mainBox
+        const footer = document.createElement('h5')
+        footer.innerHTML = 'akagoe reviews database'
+
+        // Create mainBox
+        const mainBox = document.createElement('div')
+        mainBox.appendChild(header)
+        mainBox.appendChild(mainBoxStar)
+        mainBox.appendChild(description)
+        mainBox.appendChild(line)
+        mainBox.appendChild(footer)
+        mainBox.classList.add('main-box', 'review-box', 'swiper-slide')
+
+        const swiperWrapper = $('.review-main .main')
+        swiperWrapper.appendChild(mainBox)
+
+}
+
+export {createCommentBox, createMainBox, createMainBoxFail}

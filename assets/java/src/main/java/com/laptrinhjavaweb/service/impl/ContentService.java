@@ -84,12 +84,18 @@ public class ContentService implements IContentService {
 		contentRepository.save(entity1);
 		
 		ContentEntity entity2= new ContentEntity();
-		String titleNameENG_vot="vot'";
-		String titleNameVIE_vot="vot1" ;
-		String titleNameJPN_vot="vot2";
-		String contentDetailsJPN_vot="vot3";
-		String contentDetailsENG_vot="vot4";
-		String contentDetailsVIE_vot="vot5";
+		String titleNameENG_vot="What is Vot";
+		String titleNameVIE_vot="Vọt là gì" ;
+		String titleNameJPN_vot="Votは何ですか";
+		String contentDetailsJPN_vot="Jump is a game for everyone.\r\n" + 
+				"Fun and entertainment mixed with a little suspense\r\n" + 
+				"Multi-platform";
+		String contentDetailsENG_vot="年齢をかかわらず楽しませるゲーム。\r\n" + 
+				"楽しく、リラックス、そしてちょっとしたドキドキ感じを含む。\r\n" + 
+				"クロスプラットフォームのゲーム　（クロスプレイ）";
+		String contentDetailsVIE_vot="Vọt là một trò chơi dành cho tất cả mọi người \r\n" + 
+				"Vui vẻ, giải trí pha một tí hồi hợp\r\n" + 
+				"Đa nền tảng";
 		entity2.setTitleNameVIE(titleNameVIE_vot);
 		entity2.setTitleNameENG(titleNameENG_vot);
 		entity2.setTitleNameJPN(titleNameJPN_vot);
@@ -100,12 +106,18 @@ public class ContentService implements IContentService {
 		contentRepository.save(entity2);
 		
 		ContentEntity entity3= new ContentEntity();
-		String titleNameENG_revivedknight="night";
-		String titleNameVIE_revivedknight="night1" ;
-		String titleNameJPN_revivedknight="night2";
-		String contentDetailsJPN_revivedknight="night3";
-		String contentDetailsENG_revivedknight="night4";
-		String contentDetailsVIE_revivedknight="night5";
+		String titleNameENG_revivedknight="Revived Knight";
+		String titleNameVIE_revivedknight="Revived Knight" ;
+		String titleNameJPN_revivedknight="Revived Knight";
+		String contentDetailsJPN_revivedknight="陸地の暗い森に、ある城は他の世界に繋がれると言われた。そこにいる騎士が千年も寝坊したあとで、ようやく目覚めた。\r\n" + 
+				"ゲーム形式：· 2D, Metroidvania.\r\n" + 
+				"ボスとの戦いを通して主人公の記憶を取り戻す旅です。";
+		String contentDetailsENG_revivedknight="In the dark forest of the continent, there is a castle rumored to be connected to another world. There, a knight who had been asleep for thousands of years awoke.\r\n" + 
+				"Appearance: 2D, Metroidvania.\r\n" + 
+				"The game will be a journey to regain memories through fierce battles with bosses.";
+		String contentDetailsVIE_revivedknight="Trong khu rừng tối tăm của lục địa, có một lâu đài được đồn đại là kết nối với thế giới khác. Ở đó, một hiệp sĩ đã ngủ quên hàng ngàn năm đã tỉnh dậy.\r\n" + 
+				"Hình thức: 2D, Metroidvania.\r\n" + 
+				"Trò chơi sẽ là một hành trình tìm lại kí ức thông qua những trận chiến ác liệt với những con trùm.";
 		entity3.setTitleNameVIE(titleNameVIE_revivedknight);
 		entity3.setTitleNameENG(titleNameENG_revivedknight);
 		entity3.setTitleNameJPN(titleNameJPN_revivedknight);
@@ -116,12 +128,19 @@ public class ContentService implements IContentService {
 		contentRepository.save(entity3);
 		
 		ContentEntity entity4= new ContentEntity();
-		String titleNameENG_soulhalo="halo";
-		String titleNameVIE_soulhalo="halo1" ;
-		String titleNameJPN_soulhalo="halo2";
+		String titleNameENG_soulhalo="Soul Halo";
+		String titleNameVIE_soulhalo="Soul Halo" ;
+		String titleNameJPN_soulhalo="Soul Halo";
 		String contentDetailsJPN_soulhalo="halo3";
-		String contentDetailsENG_soulhalo="halo4";
-		String contentDetailsVIE_soulhalo="halo5";
+		String contentDetailsENG_soulhalo=" Soul Halo is a story game with a rotating puzzle adventure called Riley.\r\n" + 
+				"For people aged 16 and above.\r\n" + 
+				"Riley is a depiction of a high school girl suffering from social disorder as a result of early family shock, which had a great influence on her, turning her from a cheerful and lively girl into a person who was harsh and afraid of communication.\r\n" + 
+				"\"Soul Halo\" is this girl's journey to find herself";
+		String contentDetailsVIE_soulhalo="SOUL HALO là một tựa game cốt truyện với hình thức phiêu lưu giả đố xoay quay nhân vật có tên là Riley\r\n" + 
+				"Phù hợp với lứa tuổi ≥16+\r\n" + 
+				"Riley là hình ảnh một cô nữ sinh trung học bị chứng bệnh rối loạn xã hội vì một cú sốc của gia đình ở độ tuổi mới lớn.\r\n" + 
+				"Nó đã gây ảnh hưởng không nhỏ biến cô từ một cô bé vui vẻ hoạt bát thành một người lầm lỳ cấu gắt và sợ giao tiếp.\r\n" + 
+				"SOUL HALO chính là hành trình đi tìm lại bản thân của cô gái mang tên Riley này";
 		entity4.setTitleNameVIE(titleNameVIE_soulhalo);
 		entity4.setTitleNameENG(titleNameENG_soulhalo);
 		entity4.setTitleNameJPN(titleNameJPN_soulhalo);

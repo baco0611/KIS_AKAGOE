@@ -11,6 +11,7 @@ public class BackgroundConverter {
 		BackgroundDTO dto = new BackgroundDTO();
 		dto.setPageName(entity.getPageName());
 		dto.setImageLink(entity.getImagelink());
+		dto.setIdName(entity.getIdName());
 		return dto;
 	}
 }

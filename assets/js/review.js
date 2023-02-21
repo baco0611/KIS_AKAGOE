@@ -1,13 +1,13 @@
 import {fetchAPI} from "./loadComment.js"
 
-function handleTheChangeOfReview() {
+function handleTheChangeOfReview(name) {
     
     // fetch API based on value of sort btn
     const sortBtn = $('.review-content-containt .sort-btn select')
     sortBtn.onchange = () => {
         // console.log(sortBtn.value)
         let commentsApi = "http://localhost:8081" + sortBtn.value
-        fetchAPI(commentsApi)
+        fetchAPI(commentsApi, name)
     }
     
     // Handle readmore

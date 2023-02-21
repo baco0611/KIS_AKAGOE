@@ -6,6 +6,7 @@ import postCommentToBe from "./postCommentToBE.js";
 
 // Contructor function
 function Validator(option) {
+    console.log(option)
 
     function getParent(element, selector) {
         while(element.parentElement) {
@@ -89,6 +90,7 @@ function Validator(option) {
                     })
 
                     formValues['star'] = Number(id)
+                    formValues['idName'] = option.name
 
                     // option.onSubmit(formValues)
                     const mainBox = $('.review-main .main-box')
@@ -171,22 +173,22 @@ Validator.isPhoneNumber = (selector, message) => {
     }
 }
 
-Validator({
-    form: '#comment-form',
-    formGroupSelector: '.form-group',
-    errorSelector: '.form-message',
-    rules: [
-        Validator.isRequired('#comment-name', 'Please fill your full name'),
-        Validator.isRequired('#comment-email', 'Please fill your email'),
-        Validator.isEmail('#comment-email', 'Please fill correct email'),
-        Validator.isRequired('#comment-phone'),
-        Validator.minLength('#comment-phone', 10, "Please fill the correct phone number"),
-        Validator.isPhoneNumber('#comment-phone', "Sai tề"),
-        Validator.isRequired('#comment-text'),
-    ],
-    onSubmit(data) {
-        console.log(data)
-    }
-});
+// Validator({
+//     form: '#comment-form',
+//     formGroupSelector: '.form-group',
+//     errorSelector: '.form-message',
+//     rules: [
+//         Validator.isRequired('#comment-name', 'Please fill your full name'),
+//         Validator.isRequired('#comment-email', 'Please fill your email'),
+//         Validator.isEmail('#comment-email', 'Please fill correct email'),
+//         Validator.isRequired('#comment-phone'),
+//         Validator.minLength('#comment-phone', 10, "Please fill the correct phone number"),
+//         Validator.isPhoneNumber('#comment-phone', "Sai tề"),
+//         Validator.isRequired('#comment-text'),
+//     ],
+//     onSubmit(data) {
+//         console.log(data)
+//     }
+// });
 
 export default Validator

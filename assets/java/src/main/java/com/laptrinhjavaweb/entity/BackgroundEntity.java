@@ -11,6 +11,16 @@ public class BackgroundEntity extends BaseEntity {
 	private String pageName;
 	@Column(name = "image_link", length = 500)
 	private String imagelink;
+	@Column(name = "idName")
+	private String idName;
+	
+	public String getIdName() {
+		return idName;
+	}
+
+	public void setIdName(String idName) {
+		this.idName = idName;
+	}
 
 	public String getPageName() {
 		return pageName;
