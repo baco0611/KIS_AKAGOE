@@ -81,10 +81,10 @@ public class CharacterService implements ICharacterService {
 		String descriptionVIE_vot = "Là một chú ếch ninja xanh lá \r\n" + 
 				"Được vẽ 2d pixel \r\n" + 
 				"Với một gương mặt, hành động vui nhộn\r\n";
-		String descriptionENG_vot = "A green ninja frog\r\n" + 
-				"Pixels drawn in two dimensions\r\n" + 
-				"With a funny face, action";
-		String imageLink_vot = "../assets/img/akagoe/character/puppet_kid.gltf";
+		String descriptionENG_vot = "--> A green ninja frog\r\n" + 
+				"--> Pixels drawn in two dimensions\r\n" + 
+				"--> With a funny face, action";
+		String imageLink_vot = "../assets/img/vot/character/character.png";
 		String imageType_vot = "2D";
 		entity2.setDescriptionENG(descriptionENG_vot);
 		entity2.setDescriptionJPN(descriptionJPN_vot);
@@ -104,7 +104,7 @@ public class CharacterService implements ICharacterService {
 		String descriptionENG_revivedknight = "The character is inspired by the famous video game Hollow Knight.\r\n" + 
 				"With a simple appearance, the character can perform many different actions such as walking, running, jumping, climbing, slashing, shooting, etc.\r\n" + 
 				"With good movement response, this character can operate in many different terrains.\r\n";
-		String imageLink_revivedknight = "../assets/img/akagoe/character/puppet_kid.gltf";
+		String imageLink_revivedknight = "../assets/img/revivedknight/character/knight.glb";
 		String imageType_revivedknight = "3D";
 		entity3.setDescriptionENG(descriptionENG_revivedknight);
 		entity3.setDescriptionJPN(descriptionJPN_revivedknight);

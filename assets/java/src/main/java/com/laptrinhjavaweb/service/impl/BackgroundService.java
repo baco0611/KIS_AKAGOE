@@ -139,7 +139,7 @@ public class BackgroundService implements IBackgroundService {
 		entity3_revivedknight.setIdName("revivedknight");
 		BackgroundEntity entity4_revivedknight = new BackgroundEntity();
 		entity4_revivedknight.setPageName("character");
-		entity4_revivedknight.setImagelink("#E08181");
+		entity4_revivedknight.setImagelink("#0d253b");
 		entity4_revivedknight.setIdName("revivedknight");
 		BackgroundEntity entity5_revivedknight = new BackgroundEntity();
 		entity5_revivedknight.setPageName("review");
@@ -147,7 +147,7 @@ public class BackgroundService implements IBackgroundService {
 		entity5_revivedknight.setIdName("revivedknight");
 		BackgroundEntity entity6_revivedknight = new BackgroundEntity();
 		entity6_revivedknight.setPageName("other");
-		entity6_revivedknight.setImagelink("#6FB5CF");
+		entity6_revivedknight.setImagelink("#0d253b");
 		entity6_revivedknight.setIdName("revivedknight");
 		backgroundRepository.save(entity1_revivedknight);
 		backgroundRepository.save(entity2_revivedknight);
