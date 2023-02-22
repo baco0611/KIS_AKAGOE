@@ -1,12 +1,12 @@
 // const $ = document.querySelector.bind(document);
 // const $$ = document.querySelectorAll.bind(document);
-import {createCommentBox} from "./handelCreateComment.js";
+// import {createCommentBox} from "./handelCreateComment.js";
 import {restartTheForm} from "./review.js";
 import postCommentToBe from "./postCommentToBE.js";
+import { fetchAPI } from "./loadComment.js";
 
 // Contructor function
 function Validator(option) {
-    console.log(option)
 
     function getParent(element, selector) {
         while(element.parentElement) {
@@ -93,10 +93,11 @@ function Validator(option) {
                     formValues['idName'] = option.name
 
                     // option.onSubmit(formValues)
-                    const mainBox = $('.review-main .main-box')
-                    createCommentBox(formValues, mainBox)
-                    postCommentToBe(formValues)
+                    // createCommentBox(formValues, mainBox)
                     restartTheForm()
+                    
+                    postCommentToBe(formValues)
+                    // fetchAPI(commentsApi, formValues.idName)
                 }
             }
 

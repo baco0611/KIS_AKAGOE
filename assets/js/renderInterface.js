@@ -614,7 +614,6 @@ function createOtherAndFeedback(data, name, language) {
         return 0.5 - Math.random();
     });
     data = data.filter(dataElement => dataElement.idName != name)
-    console.log(data)
 
     //I. Create other section
     //I.1. Create header

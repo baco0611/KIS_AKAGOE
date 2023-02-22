@@ -40,19 +40,19 @@ public class initSetting implements InitializingBean {
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		if (characterRepository.findAll() != null) {
+		if (characterRepository.findAll() == null) {
 			characterService.updateCharacter();
 		}
-		if (exploreRepository.findAll() != null) {
+		if (exploreRepository.findAll() == null) {
 			exploreService.updateExplore();
 		}
-		if (contentRepository.findAll() != null) {
+		if (contentRepository.findAll() == null) {
 			contentService.updateIntroduce();
 		}
-		if (backgroundRepository.findAll() != null) {
+		if (backgroundRepository.findAll() == null) {
 			backgroundService.updateBackground();
 		}
-		if (otherRepository.findAll() != null) {
+		if (otherRepository.findAll() == null) {
 			otherService.updateOther();
 		}
 	}

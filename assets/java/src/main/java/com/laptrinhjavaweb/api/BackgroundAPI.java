@@ -21,19 +21,19 @@ public class BackgroundAPI {
 		result.setBackground(backgroundService.findByIdName(idName));
 		if (idName.equals("akagoe")) {
 			result.setNameOfGame("赤声\r\nChildren's Voices");
-			result.setUrlDownLoad("./assets/file/setup.exe\r\n");
+			result.setUrlDownLoad("./assets/file/akagoeSetup.exe\r\n");
 		}
 		if (idName.equals("vot")) {
 			result.setNameOfGame("VỌT\r\nFunny Game");
-			result.setUrlDownLoad("./assets/file/setup.exe\r\n");
+			result.setUrlDownLoad("./assets/file/votSetup.exe\r\n");
 		}
 		if (idName.equals("soulhalo")) {
 			result.setNameOfGame("SOUL HALO");
-			result.setUrlDownLoad("./assets/file/setup.exe\r\n");
+			result.setUrlDownLoad(" ");
 		}
 		if (idName.equals("revivedknight")) {
 			result.setNameOfGame(" \r\n ");
-			result.setUrlDownLoad("./assets/file/setup.exe\r\n");
+			result.setUrlDownLoad("./assets/file/revivedKnightSetup.exe\r\n");
 		}
 		return result;
 	}

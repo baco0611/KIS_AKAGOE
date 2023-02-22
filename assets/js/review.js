@@ -97,7 +97,6 @@ function handleTheChangeOfReview(name) {
     const cmtBox = $('.comment-box')
     const cmtCon = $('.comment-container')
     const closeBtn = $('.comment-container i')
-    const submitBtn = $('.comment-box button')
     
     cmtBtn.onclick = () => {
         cmtBox.classList.add('open')
@@ -142,6 +141,7 @@ function restartTheForm() {
         const formInput = $('.comment-input')
         formInput.removeAttribute("style")
 
+        const submitBtn = $('.comment-box button')
         submitBtn.removeAttribute("style")
 
         // Open h1

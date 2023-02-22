@@ -2,9 +2,7 @@ import readMoreHandling from './readmore.js'
 import makeSwiper from './swiper.js'
 
 function createCommentBox(formValues, element) {
-    // console.log(formValues.content)
     formValues.content = formValues.content.split("\n").join(" <br> ")
-    // console.log(formValues.contenst)
     
     // Create box-star
     const rvBoxStar = document.createElement("div")
@@ -155,6 +153,11 @@ function createCommentBox(formValues, element) {
     }
     readMoreHandling()
     makeSwiper()
+
+    // const mainBox = $('.main-box.review-box.swiper-slide')
+    // if(mainBox) {
+        
+    // }
 }
 
 function createMainBox(data) {

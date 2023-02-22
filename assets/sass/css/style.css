@@ -1533,5 +1533,10 @@ body {
     width: 60vw;
   }
 }
+@media only screen and (max-width: 500px) {
+  #other-session .other-div {
+    width: 100vw;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

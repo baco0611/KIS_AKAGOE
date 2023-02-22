@@ -131,7 +131,11 @@ public class ContentService implements IContentService {
 		String titleNameENG_soulhalo="Soul Halo";
 		String titleNameVIE_soulhalo="Soul Halo" ;
 		String titleNameJPN_soulhalo="Soul Halo";
-		String contentDetailsJPN_soulhalo="halo3";
+		String contentDetailsJPN_soulhalo="SOUL HALO はRileyというキャラクターをめぐってアドベンチャー形式みたいの謎解きゲームである。\r\n" + 
+				" ゲーム対象：16歳以上\r\n" + 
+				"Rileyは少年少女の頃に起こった家族の衝撃で鬱病になってしまったイメージを持っている女子の高校生だ。\r\n" + 
+				"そのため、元の明るく活発なRileyは短気で大人しくてコミュニケーションが苦手な女の子になった。\r\n" + 
+				"SOUL HALOはRileyというキャラクターの元の自分自身に戻る旅だ。";
 		String contentDetailsENG_soulhalo=" Soul Halo is a story game with a rotating puzzle adventure called Riley.\r\n" + 
 				"For people aged 16 and above.\r\n" + 
 				"Riley is a depiction of a high school girl suffering from social disorder as a result of early family shock, which had a great influence on her, turning her from a cheerful and lively girl into a person who was harsh and afraid of communication.\r\n" + 

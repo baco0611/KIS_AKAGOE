@@ -126,7 +126,7 @@ public class ExploreService implements IExploreService {
 		ExploreEntity entity1_soulhalo= new ExploreEntity();
 		String contentExploreENG1_soulhalo="The game is based on the story of Riley, a young girl.";
 		String contentExploreVIE1_soulhalo="Game được xây dựng dựa trên chính câu chuyện của cô bé Riley";
-		String contentExploreJPN1_soulhalo="halo2";
+		String contentExploreJPN1_soulhalo="Rileyの物語に基づいて作られたゲームだ。";
 		String imageLink1_soulhalo="../assets/img/soulhalo/explore/Picture1.png";
 		entity1_soulhalo.setContentExploreENG(contentExploreENG1_soulhalo);
 		entity1_soulhalo.setContentExploreJPN(contentExploreJPN1_soulhalo);
@@ -137,7 +137,7 @@ public class ExploreService implements IExploreService {
 		ExploreEntity entity2_soulhalo= new ExploreEntity();
 		String contentExploreENG2_soulhalo="On the journey to find fun, the character must overcome difficult challenges.";
 		String contentExploreVIE2_soulhalo="Trên hành trình tìm kiếm sự vui vẻ, nhân vật phải vượt quá các thử thách khó khăn";
-		String contentExploreJPN2_soulhalo="halo5";
+		String contentExploreJPN2_soulhalo="楽しみを求める間に困難なチャレンジを乗り越えないといけない。";
 		String imageLink2_soulhalo="../assets/img/soulhalo/explore/Picture2.png";
 		entity2_soulhalo.setContentExploreENG(contentExploreENG2_soulhalo);
 		entity2_soulhalo.setContentExploreJPN(contentExploreJPN2_soulhalo);
@@ -148,7 +148,7 @@ public class ExploreService implements IExploreService {
 		ExploreEntity entity3_soulhalo= new ExploreEntity();
 		String contentExploreENG3_soulhalo="The codes are difficult and require players to solve them to continue the journey.";
 		String contentExploreVIE3_soulhalo="Những mật mã khó và bắt buộc người chơi phải giải để tiếp tục hành trình";
-		String contentExploreJPN3_soulhalo="halo8";
+		String contentExploreJPN3_soulhalo="プレイヤーは次のレベルに進められるために、難しいコードを解く必要がある場合も出る。";
 		String imageLink3_soulhalo="../assets/img/soulhalo/explore/Picture3.png";
 		entity3_soulhalo.setContentExploreENG(contentExploreENG3_soulhalo);
 		entity3_soulhalo.setContentExploreJPN(contentExploreJPN3_soulhalo);

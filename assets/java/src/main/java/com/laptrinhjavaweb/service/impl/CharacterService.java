@@ -115,7 +115,9 @@ public class CharacterService implements ICharacterService {
 		characterRepository.save(entity3);
 		
 		CharacterEntity entity4 = new CharacterEntity();
-		String descriptionJPN_soulhalo = "halo";
+		String descriptionJPN_soulhalo = "チームのメンバーは様々な角度からよく見てこのキャラクターを選択することにした。\r\n" + 
+				"明るい冒険者みたいの外見でプレイヤーはキャラクターのアドベンチャーが実感できる。\r\n" + 
+				"Rileyは自分の物語を通じてプレイヤーの思春期の感情の発達過程を聞いてくれて深く分かってくれる友達になる。";
 		String descriptionVIE_soulhalo = "Nhân vật được nhóm chọn lựa và xem xét từ nhiều khía cạnh khác nhau\r\n" + 
 				"Với ngoại hình trẻ trung năng động và có phần phiêu lưu sẽ tạo cho người chơi cảm giác đang hòa mình vào chính hành trình của nhân vật\r\n" + 
 				"Riley sẽ là người đồng hành, thấu hiểu và chia sẽ với bạn trong quá trình dậy thì và phát triển cảm xúc thông qua chính câu chuyện của cô ấy.";
