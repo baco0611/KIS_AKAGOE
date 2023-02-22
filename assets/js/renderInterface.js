@@ -670,7 +670,7 @@ function createOtherAndFeedback(data, name, language) {
         <div class="footer-nav">
             <div class="language">
                 <button class="btn-drop">
-                    ENG
+                    ${language}
                     <i class="ti-angle-down"></i>
                 </button>
                 <ul class="drop-menu none">
